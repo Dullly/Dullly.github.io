@@ -220,16 +220,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-schedule">
-          <a href="/schedule/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
-            
-            日程表
-          </a>
-        </li>
-      
 
       
         <li class="menu-item menu-item-search">
@@ -427,11 +417,11 @@
 <h4 id="margin加倍的问题"><a href="#margin加倍的问题" class="headerlink" title="margin加倍的问题"></a>margin加倍的问题</h4><blockquote>
 <p>设置为float的div在ie下设置的margin会加倍。这是一个ie6都存在的bug。解决方案是在这个div里面加上display:inline;    </p>
 </blockquote>
-<p>example:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">    <span class="selector-id">#IamFloat</span>&#123;</div><div class="line">        <span class="attribute">float</span>:left; </div><div class="line">        <span class="comment">/*IE下理解为10px*/</span></div><div class="line">        <span class="attribute">margin</span>:<span class="number">5px</span>;</div><div class="line">        <span class="comment">/*设置了display后，IE下再理解为5px*/</span></div><div class="line">        <span class="attribute">display</span>:inline;</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">#div</span> <span class="attr">id</span>=<span class="string">”imfloat”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>example:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">    #IamFloat&#123;</div><div class="line">        float:left; </div><div class="line">        /*IE下理解为10px*/</div><div class="line">        margin:5px;</div><div class="line">        /*设置了display后，IE下再理解为5px*/</div><div class="line">        display:inline;</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">#div</span> <span class="attr">id</span>=<span class="string">”imfloat”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>这里细说一下block与inline两个元素：block元素的特点是,总是在新行上开始,高度,宽度,行高,边距都可以控制(块元素);Inline元素的特点是,和其他元素在同一行上,不可控制(内嵌元              素);     #box{ display:block; //可以为内嵌元素模拟为块元素 display:inline; //实现同一行排列的效果 diplay:table; </p>
 <hr>
 <h4 id="IE与宽度和高度的问题"><a href="#IE与宽度和高度的问题" class="headerlink" title="IE与宽度和高度的问题"></a>IE与宽度和高度的问题</h4><p>IE 不认得min-这个定义，但实际上它把正常的width和height当作有min的情况来使。这样问题就大了，如果只用宽度和高度，正常的浏览器里这两个值就不会变，</p>
-<p>如果只用min-width和min-height的话，IE下面根本等于没有设置宽度和高度。     比如要设置背景图片，这个宽度是比较重要的。要解决这个问题，<br>可以这样：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">    <span class="selector-id">#box</span>&#123;</div><div class="line">        <span class="attribute">width</span>: <span class="number">80px</span>; </div><div class="line">        <span class="attribute">height</span>: <span class="number">35px</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-tag">html</span>&gt;<span class="selector-tag">body</span> <span class="selector-id">#box</span>&#123; </div><div class="line">        <span class="attribute">width</span>: auto; </div><div class="line">        <span class="attribute">height</span>: auto; </div><div class="line">        <span class="attribute">min-width</span>: <span class="number">80px</span>; </div><div class="line">        <span class="attribute">min-height</span>: <span class="number">35px</span>;</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">#div</span> <span class="attr">id</span>=<span class="string">”box”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>如果只用min-width和min-height的话，IE下面根本等于没有设置宽度和高度。     比如要设置背景图片，这个宽度是比较重要的。要解决这个问题，<br>可以这样：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">    #box&#123;</div><div class="line">        width: 80px; </div><div class="line">        height: 35px;</div><div class="line">    &#125;</div><div class="line">    html&gt;body #box&#123; </div><div class="line">        width: auto; </div><div class="line">        height: auto; </div><div class="line">        min-width: 80px; </div><div class="line">        min-height: 35px;</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">#div</span> <span class="attr">id</span>=<span class="string">”box”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <hr>
 <h4 id="DIV浮动IE文本产生3象素的bug"><a href="#DIV浮动IE文本产生3象素的bug" class="headerlink" title="DIV浮动IE文本产生3象素的bug"></a>DIV浮动IE文本产生3象素的bug</h4><p>左边对象浮动，右边采用外补丁的左边距来定位，右边对象内的文本会离左边有3px的间距.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">    #box&#123; </div><div class="line">        float:left; </div><div class="line">        width:800px;</div><div class="line">    &#125;</div><div class="line">    #left&#123; </div><div class="line">        float:left; </div><div class="line">        width:50%;</div><div class="line">    &#125;</div><div class="line">    #right&#123;</div><div class="line">        width:50%;</div><div class="line">    &#125;</div><div class="line">    *html #left&#123; </div><div class="line">        margin-right:-3px; //这句是关键</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <hr>
@@ -568,10 +558,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
 
@@ -579,10 +569,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
