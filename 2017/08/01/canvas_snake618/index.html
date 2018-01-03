@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,canvas," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="以儿时热门游戏贪吃蛇作为互动游戏。用户在游戏中可以赢取随机出现的红包（红包概率出现，且一场仅出现一次），并记录用户分数。使用Canvas实现  以下是我制作整个游戏时，遇到的一些问题与解决方法。">
+<meta name="keywords" content="js,canvas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="贪吃蛇Canvas小游戏">
+<meta property="og:url" content="https://dullly.github.io/2017/08/01/canvas_snake618/index.html">
+<meta property="og:site_name" content="Dull&#39;s Blog">
+<meta property="og:description" content="以儿时热门游戏贪吃蛇作为互动游戏。用户在游戏中可以赢取随机出现的红包（红包概率出现，且一场仅出现一次），并记录用户分数。使用Canvas实现  以下是我制作整个游戏时，遇到的一些问题与解决方法。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/4C/hhoGAFpMObWAbrUbABqUmL0Z0Pg417.gif">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/D7/hRoGAFpMT_WAB51nAAXCY-gHuKE971.gif">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/D8/hRoGAFpMUJCAMsUzAAyzABAvWJU731.gif">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/58/hhoGAFpMdWeAfxk8AAD8AgI9jmU873.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/58/hhoGAFpMdbqAIVQ9AAD16G6SE7M816.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/5D/hhoGAFpMgOGAe4tCAACaJzLGD1U414.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/DF/hRoGAFpMd5CAP4QoAA0BuOF9tb0002.gif">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/E0/hRoGAFpMem6ATLPTAAYRPASgR30997.gif">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/5A/hhoGAFpMexCAUAX-AABKdxE-EQw893.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/5A/hhoGAFpMe6uANrsLAACitp_bV08939.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/5A/hhoGAFpMe-CAKHLmAAApWQSUS5o489.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/E3/hRoGAFpMghaAJxtmAAlzJ_7RVbc615.gif">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/5E/hhoGAFpMg4KAU4JvAAYCdaT5YpU928.gif">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/5E/hhoGAFpMg_aAXla8AAo4N5pu0zc327.gif">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/E4/hRoGAFpMhOGAeagxAAsA_N2zQEk025.gif">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/E4/hRoGAFpMhUCASuIcABMcEwtdWkM057.gif">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/5E/hhoGAFpMhVaAZM2jAAAmC1SzHDI916.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/E4/hRoGAFpMhW6Af4MDAAQB4Q8ef6M022.gif">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/E4/hRoGAFpMhZOAUwJfAAEJn0VV1Ys830.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/5E/hhoGAFpMheSAQ1WyAADBb6fujYE489.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/5E/hhoGAFpMhhOAWNQGAAER9S4l9Nw819.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/E5/hRoGAFpMhiWAdeJyAADk9WcXU3M941.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/E5/hRoGAFpMhlOAAHj6AABXpWYYWgM232.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/E5/hRoGAFpMhnWAcFbGAADRlg_j6SI820.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/E5/hRoGAFpMht2AZeIuAAOrSEnjLrc099.png">
+<meta property="og:updated_time" content="2018-01-03T12:32:59.702Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="贪吃蛇Canvas小游戏">
+<meta name="twitter:description" content="以儿时热门游戏贪吃蛇作为互动游戏。用户在游戏中可以赢取随机出现的红包（红包概率出现，且一场仅出现一次），并记录用户分数。使用Canvas实现  以下是我制作整个游戏时，遇到的一些问题与解决方法。">
+<meta name="twitter:image" content="http://cimg1.fenqile.com/product/M00/D3/4C/hhoGAFpMObWAbrUbABqUmL0Z0Pg417.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://dullly.github.io/2017/08/01/canvas_snake618/"/>
+
+
+
+
+
+  <title>贪吃蛇Canvas小游戏 | Dull's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dull's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dullly.github.io/2017/08/01/canvas_snake618/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cartman">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dull's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">贪吃蛇Canvas小游戏</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-01T00:00:00+08:00">
+                2017-08-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/文章/" itemprop="url" rel="index">
+                    <span itemprop="name">文章</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div class="note info"><p>以儿时热门游戏贪吃蛇作为互动游戏。用户在游戏中可以赢取随机出现的红包（红包概率出现，且一场仅出现一次），并记录用户分数。使用<code>Canvas</code>实现 </p></div>
+<p>以下是我制作整个游戏时，遇到的一些问题与解决方法。<br><a id="more"></a></p>
+<h1 id="活动需求"><a href="#活动需求" class="headerlink" title="活动需求"></a>活动需求</h1><p>以儿时热门游戏贪吃蛇作为互动游戏。用户在游戏中可以赢取随机出现的红包（红包概率出现，且一场仅出现一次），并记录用户分数。效果如下所示。<br><img src="http://cimg1.fenqile.com/product/M00/D3/4C/hhoGAFpMObWAbrUbABqUmL0Z0Pg417.gif" alt="Image text"></p>
+<hr>
+<h1 id="游戏实现"><a href="#游戏实现" class="headerlink" title="游戏实现"></a>游戏实现</h1><h2 id="贪吃蛇绘制思路"><a href="#贪吃蛇绘制思路" class="headerlink" title="贪吃蛇绘制思路"></a>贪吃蛇绘制思路</h2><h3 id="计算贪吃蛇方向"><a href="#计算贪吃蛇方向" class="headerlink" title="计算贪吃蛇方向"></a>计算贪吃蛇方向</h3><p>在游戏开始时，贪吃蛇默认朝右移动，当用户点击游戏区域，则记录这个点为目标点，整个贪吃蛇朝着新的目标点运动。否则继续按照之前指定的方向继续运动。效果如左边所示:<br><img src="http://cimg1.fenqile.com/product/M00/DF/D7/hRoGAFpMT_WAB51nAAXCY-gHuKE971.gif" alt="Image text"><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">downFN</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="keyword">switch</span> (gameState) &#123;</div><div class="line">        <span class="keyword">case</span> <span class="string">'play'</span>:</div><div class="line">            target.x = e.offsetX;</div><div class="line">            target.y = e.offsetY;</div><div class="line">            snake.lastArm.target(target.x, target.y);</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="string">'dead'</span>:</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当用户按下鼠标时，获取当前按下的位置，改变贪吃蛇前进方向。</p>
+<h3 id="根据坐标绘制贪吃蛇"><a href="#根据坐标绘制贪吃蛇" class="headerlink" title="根据坐标绘制贪吃蛇"></a>根据坐标绘制贪吃蛇</h3><p>根据计算出的各个坐标点，通过 <code>Canvas</code> 的 <code>lineTo()</code> 方法，将这些点连成线段。当线段短到一定程度时，用户便无法通过肉眼分辨出这些是由一段段线段连接而成，从视觉上达到绘制曲线的结果。<br>在每一次更新<code>Canvas</code>时，都会清除之前画布然后再根据当前坐标点重新绘制贪吃蛇，在肉眼看起来“贪吃蛇”就和真的一样，动了起来。那么这些坐标是如何计算出来的呢？<br><img src="http://cimg1.fenqile.com/product/M00/DF/D8/hRoGAFpMUJCAMsUzAAyzABAvWJU731.gif" alt="Image text"></p>
+<h3 id="贪吃蛇坐标计算"><a href="#贪吃蛇坐标计算" class="headerlink" title="贪吃蛇坐标计算"></a>贪吃蛇坐标计算</h3><p>当我们确定好坐标计算的方法后，便开始每一点坐标的计算。如图所示，贪吃蛇坐标值是由endX()、endY()计算而得。通过当前对象中angle角度值，按照如图所示的公式，可以计算得出该点下一次坐标。<br><img src="http://cimg1.fenqile.com/product/M00/D3/58/hhoGAFpMdWeAfxk8AAD8AgI9jmU873.png" alt="Image text"></p>
+<h3 id="贪吃蛇描边效果"><a href="#贪吃蛇描边效果" class="headerlink" title="贪吃蛇描边效果"></a>贪吃蛇描边效果</h3><p>设计稿中贪吃蛇具有描边效果，如图所示。先画一条较粗的线段放在下面，然后在画一条较细的线段，放在粗线段的上面，从视觉上达到线段描边效果。<br>设计稿中贪吃蛇具有描边效果，如图所示。因为此贪吃蛇是通过<code>Canvas</code>中的许多小线段拼接而成，并非是一条完整曲线，并且<code>Canvas</code> <code>lineTo()</code> (绘制线段方法)不提供线段描边，虽然可以利用矩形的填充方法可以做到类似于描边效果，但如果使用矩形方法拼接贪吃蛇，需要额外计算与保存坐标点，增加不必要的开销，所以思考如何使用线段实现描边效果。<br>在<code>Canvas</code>中有一个<code>save()</code>和<code>restore()</code>方法，作用是保存当前环境的状态和返回之前保存过的路径状态和属性。所以我们可以利用这个方法，先画一条较粗的线段放在下面，然后在画一条较细的线段，放在粗线段的上面，从视觉上达到线段描边效果。<br><img src="http://cimg1.fenqile.com/product/M00/D3/58/hhoGAFpMdbqAIVQ9AAD16G6SE7M816.png" alt="Image text"></p>
+<h2 id="食物、红包绘制思路"><a href="#食物、红包绘制思路" class="headerlink" title="食物、红包绘制思路"></a>食物、红包绘制思路</h2><h3 id="食物绘制"><a href="#食物绘制" class="headerlink" title="食物绘制"></a>食物绘制</h3><p>如图所示贪吃蛇食物共有三种，并且每一个食物的分值都会随着食物出现的时间而锐减。<br>因为食物固定三种，所以将三种食物的位置与颜色储存在数组中，使用 <code>drawImage</code> 绘制食物、<code>fillText</code>绘制食物分值。在每一次更新时，自身生<br>命周期都会减少，当生命周期为0时，该食物被移除。</p>
+<blockquote>
+<p>食物样式:</p>
+</blockquote>
+<p><img src="http://cimg1.fenqile.com/product/M00/D3/5D/hhoGAFpMgOGAe4tCAACaJzLGD1U414.png" alt="Image text"></p>
+<blockquote>
+<p>代码实现：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Apple</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.x = x;</div><div class="line">    <span class="keyword">this</span>.y = y;</div><div class="line">    <span class="keyword">this</span>.life = appleLife;</div><div class="line">    <span class="keyword">this</span>.rotation = <span class="number">0</span>;</div><div class="line">    <span class="keyword">this</span>.index = ~~(<span class="built_in">Math</span>.random()*<span class="number">100</span>%<span class="number">3</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">Apple.prototype.update = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.life--;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">Apple.prototype.render = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123;</div><div class="line">    context.drawImage(g_source,appleColor[<span class="keyword">this</span>.index][<span class="number">0</span>],appleColor[<span class="keyword">this</span>.index][<span class="number">1</span>],<span class="number">27</span>,<span class="number">27</span>,<span class="keyword">this</span>.x - appleWidth/<span class="number">2</span>, <span class="keyword">this</span>.y - appleWidth/<span class="number">2</span>, appleWidth, appleWidth);</div><div class="line">    <span class="keyword">if</span> (gameState !== <span class="string">'dead'</span>) &#123;</div><div class="line">        context.save();</div><div class="line">        context.fillStyle = appleColor[<span class="keyword">this</span>.index][<span class="number">2</span>];</div><div class="line">        context.font = <span class="string">'11px pingfang'</span>;</div><div class="line">        context.textAlign = <span class="string">'center'</span>;</div><div class="line">        context.fillText(<span class="keyword">this</span>.life, <span class="keyword">this</span>.x, <span class="keyword">this</span>.y + appleWidth+<span class="number">5</span>);</div><div class="line">        context.restore();</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="红包绘制"><a href="#红包绘制" class="headerlink" title="红包绘制"></a>红包绘制</h3><p>通过代码实现红包动画<br>红包的实现方式与食物相同，这里主要讲一下动画的实现，针对红包动画效果，首先使用<code>Canvas</code>绘制实现，但是调试出满意、不生硬的过度效果（<code>ease-in-out</code>等）需要较长的时间，针对红包效果与设计师沟通之后通过雪碧图实现动画。<br>其原理与CSS3雪碧图动画相同。红包射线动画效果的雪碧图共48帧，约29kb。对于整体资源加载影响不大，这里在动画执行完后在等待30帧时间，作为重复动画中的空白过渡期。</p>
+<blockquote>
+<p>使用代码实现效果(生硬)：</p>
+</blockquote>
+<p><img src="http://cimg1.fenqile.com/product/M00/DF/DF/hRoGAFpMd5CAP4QoAA0BuOF9tb0002.gif" alt="Image text"></p>
+<blockquote>
+<p>关键代码：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">context.moveTo(<span class="number">-0</span>, <span class="number">-16</span>);</div><div class="line">context.lineTo(<span class="number">-0</span>, <span class="number">-16</span>-<span class="keyword">this</span>.len);</div><div class="line">context.moveTo(<span class="number">0</span>, <span class="number">16</span>);</div><div class="line">context.lineTo(<span class="number">0</span>, <span class="number">16</span>+<span class="keyword">this</span>.len);</div><div class="line"></div><div class="line">context.moveTo( - <span class="number">16</span>, <span class="number">0</span>);</div><div class="line">context.lineTo( - <span class="number">16</span>-<span class="keyword">this</span>.len, <span class="number">0</span>);</div><div class="line">context.moveTo(<span class="number">16</span>, <span class="number">0</span>);</div><div class="line">context.lineTo(<span class="number">16</span>+<span class="keyword">this</span>.len, <span class="number">0</span>);</div><div class="line"></div><div class="line">context.moveTo( - <span class="number">16</span>, <span class="number">-16</span>);</div><div class="line">context.lineTo( - <span class="number">16</span>-<span class="keyword">this</span>.len/<span class="number">2</span>, <span class="number">-16</span>-<span class="keyword">this</span>.len/<span class="number">2</span>);</div><div class="line">context.moveTo(<span class="number">16</span>, <span class="number">16</span>);</div><div class="line">context.lineTo(<span class="number">16</span>+<span class="keyword">this</span>.len/<span class="number">2</span>, <span class="number">16</span>+<span class="keyword">this</span>.len/<span class="number">2</span>);</div><div class="line"></div><div class="line">context.moveTo(  <span class="number">16</span>, <span class="number">-16</span>);</div><div class="line">context.lineTo(  <span class="number">16</span>+<span class="keyword">this</span>.len/<span class="number">2</span>, <span class="number">-16</span>-<span class="keyword">this</span>.len/<span class="number">2</span>);</div><div class="line">context.moveTo(<span class="number">-16</span>, <span class="number">16</span>);</div><div class="line">context.lineTo(<span class="number">-16</span>-<span class="keyword">this</span>.len/<span class="number">2</span>, <span class="number">16</span>+<span class="keyword">this</span>.len/<span class="number">2</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>使用雪碧图实现(较生动)：</p>
+</blockquote>
+<p><img src="http://cimg1.fenqile.com/product/M00/DF/E0/hRoGAFpMem6ATLPTAAYRPASgR30997.gif" alt="Image text"></p>
+<blockquote>
+<p>关键代码：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">Bag_w.prototype.render = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.img)&#123;</div><div class="line">        <span class="comment">//控绘制的间隔、循环</span></div><div class="line">        <span class="keyword">this</span>.num ++;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.num &gt;=<span class="number">47</span>)&#123;</div><div class="line">            <span class="keyword">this</span>.n++;</div><div class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>.n &gt;=<span class="number">30</span>)&#123;</div><div class="line">                <span class="keyword">this</span>.num = <span class="number">0</span>;</div><div class="line">                <span class="keyword">this</span>.n = <span class="number">0</span>;;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        context.drawImage(<span class="keyword">this</span>.img, <span class="number">116</span>*<span class="keyword">this</span>.num,<span class="number">0</span>,<span class="number">116</span>,<span class="number">116</span>,<span class="keyword">this</span>.x<span class="number">-29</span>, <span class="keyword">this</span>.y<span class="number">-29</span>, <span class="number">58</span>, <span class="number">58</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="其他的思考"><a href="#其他的思考" class="headerlink" title="其他的思考"></a>其他的思考</h2><h3 id="贪吃蛇进食"><a href="#贪吃蛇进食" class="headerlink" title="贪吃蛇进食"></a>贪吃蛇进食</h3><p>当贪吃蛇与食物的距离小于一个值时，则 “吃”到了该食物。<br>针对游戏中贪吃蛇碰撞食物、红包等，无需使用复杂的碰撞检测，因为我们仅需得知贪吃蛇是否到达了食物或者红包周围的一定范围，如果是则认为成功了“吃掉”了食物，否则是没有吃到。 所以仅需计算贪吃蛇上每一点与食物、红包之间的距离，<br> <code>Distance</code> 函数返回的是两点之间的距离，所以当apple（即食物）与蛇的坐标之间的距离小于一个定值 <code>appleWidth</code> 时，我们则认为蛇吃到了该食物。分值增加，并且将该食物移除。(a为循环当中的索引)</p>
+<blockquote>
+<p>距离判断：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (distance(redbag, &#123;</div><div class="line">    <span class="attr">x</span>: snake.lastArm.endX(),</div><div class="line">    <span class="attr">y</span>: snake.lastArm.endY()</div><div class="line">&#125;) &lt; bagWidth*<span class="number">1.2</span>) &#123;</div><div class="line">    score += redbag.life;</div><div class="line">    redbags.splice(a, <span class="number">1</span>);</div><div class="line">    getRebdag = <span class="literal">true</span>;</div><div class="line">    addScoreSegments();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="坐标计算思路"><a href="#坐标计算思路" class="headerlink" title="坐标计算思路"></a>坐标计算思路</h4><p>这种方法的思路是在<code>Canvas</code>画布每一次更新时，计算贪吃蛇每个点下一步所在位置。<br>我们知道了如何画出贪吃蛇之后，就想着如何让“它”动起来。关于贪吃蛇的移动方式大概有以下有两种实现方式：<br>方法①: 计算每一点位置，时时更新：<br>贪吃蛇的移动其实就是每一点的移动。当更新的频率到达一定速率时，人眼便会认为这是“动态”的。<br>吃蛇每个点下一步所在位置,如图所示:<br><img src="http://cimg1.fenqile.com/product/M00/D3/5A/hhoGAFpMexCAUAX-AABKdxE-EQw893.png" alt="Image text"></p>
+<p>方法②：增加蛇头、删除蛇尾：<br>此方法核心是只计算蛇头下一步所处位置，在移动时增加<br>虽然这一方法计算量小，并且所需储存贪吃蛇信息的数据量也很小，但是这一方法只能适用于每段蛇身长度与移动速度相同的情况。当速度大于蛇身段长时，如图所示，头部每次移动的距离大于一段蛇身长度，每次移动时身体会逐渐分开。反之，当速度小于蛇身段时，贪吃蛇会慢慢重合，最后全部挤在一起。如果是像素风格的贪吃蛇，适用此方法。<br><img src="http://cimg1.fenqile.com/product/M00/D3/5A/hhoGAFpMe6uANrsLAACitp_bV08939.png" alt="Image text"></p>
+<h4 id="性能取舍"><a href="#性能取舍" class="headerlink" title="性能取舍"></a>性能取舍</h4><p>使用Chrome中Call Tree查看在js脚本中各个方法所占资源。可以看出，对于方法①，其中“绘制”(左图)所占资源远大于“计算”(右图)。<br>因为方法②有一定的局限性，所以首选方法①进行实现，但是担心在低端安卓机会出现帧率不高或者卡顿情况。所以观察方法①中各方法开销。<br>Call Tree可以观察在整个游戏中，各个资源的占用情况。起初我们担心的是由于计算问题导致游戏卡顿，<br>如图所示，在之后实际测试中，发现在整个游戏实际操作上无阻塞感，并且通过Chrome控制台查看Call tree，看看调用了哪些函数，发现主要时间都消耗在fillText、drawImage上，并非是坐标点相关计算函数。所以采用方法①<br><img src="http://cimg1.fenqile.com/product/M00/D3/5A/hhoGAFpMe-CAKHLmAAApWQSUS5o489.png" alt="Image text"></p>
+<h2 id="游戏绘制问题"><a href="#游戏绘制问题" class="headerlink" title="游戏绘制问题"></a>游戏绘制问题</h2><h3 id="画布跟随旋转"><a href="#画布跟随旋转" class="headerlink" title="画布跟随旋转"></a>画布跟随旋转</h3><p>当我们想要旋转蛇头时，整个画布也不断的旋转。游戏中贪吃蛇头部朝向需要与贪吃蛇前进方向一致。所以不仅仅是画出蛇头就可以了，还需要让其朝向与前进方向时时对齐。<br>在游戏中已经取得贪吃蛇相对于坐标轴旋转角度，并且<code>Canvas</code>提供旋转方法rotate()，只需将角度传入即可。一切看起来都是这么完美，但是，rotate()方法是将整个画布进行旋转，所以导致一旦贪吃蛇转向时，整个画布都将旋转，便会出现如下情况。</p>
+<blockquote>
+<p>画布旋转：</p>
+</blockquote>
+<p><img src="http://cimg1.fenqile.com/product/M00/DF/E3/hRoGAFpMghaAJxtmAAlzJ_7RVbc615.gif" alt="Image text"></p>
+<blockquote>
+<p>实现代码：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ctx.rotate(snake.sgms[length<span class="number">-1</span>].angle);</div><div class="line">ctx.drawImage(g_source, <span class="number">0</span>,<span class="number">60</span>,<span class="number">30</span>,<span class="number">30</span>,-snakeWidth/<span class="number">2</span>, -snakeWidth/<span class="number">2</span>, snakeWidth, snakeWidth);</div></pre></td></tr></table></figure>
+<p>这个时候，又到了<code>save()</code>方法上场，保存当前状态。加上<code>save()</code>后效果如图所示：<br><img src="http://cimg1.fenqile.com/product/M00/D3/5E/hhoGAFpMg4KAU4JvAAYCdaT5YpU928.gif" alt="Image text"></p>
+<blockquote>
+<p>实现代码：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ctx.save();</div><div class="line">ctx.rotate(snake.sgms[length<span class="number">-1</span>].angle);</div><div class="line">ctx.drawImage(g_source, <span class="number">0</span>,<span class="number">60</span>,<span class="number">30</span>,<span class="number">30</span>,-snakeWidth/<span class="number">2</span>, -snakeWidth/<span class="number">2</span>, snakeWidth, snakeWidth);</div></pre></td></tr></table></figure>
+<p>我们发现，这时候蛇头在左上角一动不动，因为不仅仅需要用<code>save()</code>保存当前状态，还需要将蛇头移动到相应的位置。<br>但在这个时候我们发现，蛇头并没有按照我们想象中那样完美的绑定在头部位置，而是随着贪吃蛇转向而出现一定的偏差。然后发现我们将<code>rotate</code>和<code>translate</code>方法的顺序写反了<br><img src="http://cimg1.fenqile.com/product/M00/D3/5E/hhoGAFpMg_aAXla8AAo4N5pu0zc327.gif" alt="Image text"></p>
+<blockquote>
+<p>先rotate再translate：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ctx.save();</div><div class="line">ctx.rotate(snake.sgms[length<span class="number">-1</span>].angle);</div><div class="line">ctx.translate(snake.lastArm.endX(),snake.lastArm.endY());</div><div class="line">ctx.drawImage(g_source, <span class="number">0</span>,<span class="number">60</span>,<span class="number">30</span>,<span class="number">30</span>,-snakeWidth/<span class="number">2</span>, -snakeWidth/<span class="number">2</span>, snakeWidth, snakeWidth);</div></pre></td></tr></table></figure>
+<p>将<code>rotate</code>和<code>translate</code>的顺序相调，贪吃蛇的头部已经完全正常了！<br><img src="http://cimg1.fenqile.com/product/M00/DF/E4/hRoGAFpMhOGAeagxAAsA_N2zQEk025.gif" alt="Image text"></p>
+<blockquote>
+<p>先translate再rotate：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ctx.save();</div><div class="line">ctx.translate(snake.lastArm.endX(),snake.lastArm.endY());</div><div class="line">ctx.rotate(snake.sgms[length<span class="number">-1</span>].angle);</div><div class="line">ctx.drawImage(g_source, <span class="number">0</span>,<span class="number">60</span>,<span class="number">30</span>,<span class="number">30</span>,-snakeWidth/<span class="number">2</span>, -snakeWidth/<span class="number">2</span>, snakeWidth, snakeWidth);</div></pre></td></tr></table></figure>
+<h3 id="贪吃蛇拐角问题"><a href="#贪吃蛇拐角问题" class="headerlink" title="贪吃蛇拐角问题"></a>贪吃蛇拐角问题</h3><p>如下面视频所示，贪吃蛇在转向的时候“冒出”了尖锐的拐点：<br><img src="http://cimg1.fenqile.com/product/M00/DF/E4/hRoGAFpMhUCASuIcABMcEwtdWkM057.gif" alt="Image text"><br>此问题与 <code>Canvas</code> 的 <code>lineJoin </code> 属性有关，此属性是设置或返回两条线相交时，所创建的拐角类型，前文也说过，贪吃蛇是由许多的小线段拼接而成的。所以当贪吃蛇在转向时，相当于线段交汇，所以会出现这种尖锐拐角，通过设置 <code>ctx.lineJoin = “miter” </code> 与 <code>ctx.miterLimit = 1</code> 可以将控制拐角长度，如果斜接长度超过 <code>miterLimit</code> 的值，边角会以 <code>lineJoin </code>的 “bevel” (斜角)类型来显示。<br><img src="http://cimg1.fenqile.com/product/M00/D3/5E/hhoGAFpMhVaAZM2jAAAmC1SzHDI916.png" alt="Image text"><br>我们将miterLimit 设置为1，再看效果：<br><img src="http://cimg1.fenqile.com/product/M00/DF/E4/hRoGAFpMhW6Af4MDAAQB4Q8ef6M022.gif" alt="Image text"></p>
+<h2 id="游戏问题"><a href="#游戏问题" class="headerlink" title="游戏问题"></a>游戏问题</h2><h3 id="游戏异常卡顿"><a href="#游戏异常卡顿" class="headerlink" title="游戏异常卡顿"></a>游戏异常卡顿</h3><p>在所有功能都基本开发完成之后，通过<code>stats.js</code>插件监控游戏帧率，发现游戏在安卓手机上表现异常卡顿。此设备为红米Note3(骁龙650)，正常情况下帧率应该为58-60帧左右。<br>开始怀疑是因为内存泄漏的缘故，但几经排查发现并不是这个原因。最后发现是因为游戏中跑马灯缘故，因为跑马灯不断的在改变 <code>margin-top</code> 值，引起页面一直在重绘，虽然对其单独建立了渲染层，但成效不大，改用translate处理提升也不高。最后解决方案为在进行游戏的时候暂定跑马灯与 <code>Swiper</code> ，在游戏结束后重新开启跑马灯与 <code>Swiper</code> 。<br><img src="http://cimg1.fenqile.com/product/M00/DF/E4/hRoGAFpMhZOAUwJfAAEJn0VV1Ys830.png" alt="Image text"></p>
+<h3 id="定时器导致卡死"><a href="#定时器导致卡死" class="headerlink" title="定时器导致卡死"></a>定时器导致卡死</h3><p>游戏中的倒计时功能通过定时器实现，但当定时器内置于游戏逻辑时，再次开始游戏后有一定几率卡死，遂将定时器置于游戏逻辑外，后因为不需要倒计时所以移除了定时器。</p>
+<hr>
+<h1 id="游戏性能"><a href="#游戏性能" class="headerlink" title="游戏性能"></a>游戏性能</h1><h2 id="游戏帧率"><a href="#游戏帧率" class="headerlink" title="游戏帧率"></a>游戏帧率</h2><p>因为iOS中UI渲染过程具有绝对的优先等级，再加之IOS强大的图形处理器，所以我们首先关心游戏在安卓上的表现情况，如果在安卓上表现流畅，在IOS上表现也不会差。<br><code>stats.js</code>是一个JavaScript性能监控器。这个类提供了一个简单的信息框，帮助您监控代码的性能。如图所示的深蓝色方框便是<code>stats.js</code>所提供的帧率监控。左边的60FPS为当前渲染的帧率，右侧的60-60分辨是最低帧率-最高帧率。所以可以得出使用一加3T(骁龙821处理器)的手机，在玩贪吃蛇游戏时，最低帧率为60帧，达到了满帧。<br>关于帧率，人眼在15帧能感受到连续的动画，15帧以下看过去是一张张图片，30帧是曾经的标准游戏动画帧数，但是30帧容易引起视疲劳，后来60帧成了标准。30和60肉眼分不出来，但是公认60帧是最好的效果，120帧的游戏也容易引起视觉疲劳，人眼能接受最平衡的数据量就是60帧了，再高你眼睛也采样不过来。30帧和60帧，你连续游戏几个小时就会感受出来区别了</p>
+<h3 id="一加3T（骁龙821）"><a href="#一加3T（骁龙821）" class="headerlink" title="一加3T（骁龙821）"></a>一加3T（骁龙821）</h3><p>通过第三方插件<code>stats.js</code>检测游戏帧率，以下数据为游戏在一加3T手机（2016年下半年旗舰机配置）上的表现情况，如图2-1，可以看出游戏运行情况很好，全程60帧，十分的流畅。<br><img src="http://cimg1.fenqile.com/product/M00/D3/5E/hhoGAFpMheSAQ1WyAADBb6fujYE489.png" alt="Image text"></p>
+<h3 id="红米Note3（骁龙650）"><a href="#红米Note3（骁龙650）" class="headerlink" title="红米Note3（骁龙650）"></a>红米Note3（骁龙650）</h3><p>骁龙650在性能上强于骁龙808，弱于810可以很好的代表2016年中端安卓性能。可以看出，游戏全程帧率在58-60之间，也是十分流畅。<br><img src="http://cimg1.fenqile.com/product/M00/D3/5E/hhoGAFpMhhOAWNQGAAER9S4l9Nw819.png" alt="Image text"></p>
+<h3 id="魅蓝Note3（联发科-P10）"><a href="#魅蓝Note3（联发科-P10）" class="headerlink" title="魅蓝Note3（联发科 P10）"></a>魅蓝Note3（联发科 P10）</h3><p>如果说一加3T可以代表2016年安卓旗舰系列，那么拥有Helio P10的魅蓝Note3可以代表2016年上半年千元机的整体实力。虽然在此机型帧率上表现不如前两款机型，但是也有着50-53的帧率，从游戏表现上来说相差无几。<br><img src="http://cimg1.fenqile.com/product/M00/DF/E5/hRoGAFpMhiWAdeJyAADk9WcXU3M941.png" alt="Image text"></p>
+<p>通过对以上几款安卓机型游戏帧率的分析，可以看出，此款游戏在安卓手机上表现还是比较出色的，在游戏时不会感知到明显的卡顿、延迟等，影响用户体验。</p>
+<h2 id="内存监测"><a href="#内存监测" class="headerlink" title="内存监测"></a>内存监测</h2><p>作为一个小游戏，监测其是否存在内存泄漏还是很有必要的。首先通过Chrome控制工具查看在游戏过程中，内存的变化情况，如图表示在整个游戏过程中堆栈占用的情况。如果它变得非常陡峭，说明制造了太多的垃圾；如果它一直处于上升，那么则可能发生内存泄漏。<br><img src="http://cimg1.fenqile.com/product/M00/DF/E5/hRoGAFpMhlOAAHj6AABXpWYYWgM232.png" alt="Image text"><br>从图中可以看出，并且再通过Chrome工具添加7张内存快照可以发现，整个游戏无内存泄漏风险。<br><img src="http://cimg1.fenqile.com/product/M00/DF/E5/hRoGAFpMhnWAcFbGAADRlg_j6SI820.png" alt="Image text"></p>
+<hr>
+<h1 id="思考与总结"><a href="#思考与总结" class="headerlink" title="思考与总结"></a>思考与总结</h1><h2 id="Canvas总结"><a href="#Canvas总结" class="headerlink" title="Canvas总结"></a>Canvas总结</h2><p>本来自身对于Canvas的理解还不够深入，但是在这一次贪吃蛇游戏之后，对于Canvas更加熟悉，例如在Canvas中，如果存在大量的浮点运算时，效率必然下降很多，所以建议将计算的值取整再绘制，对于需要大量渲染的场景中是非常有用的。又例如<code>save()</code>、<code>restore()</code>方法，对于<code>Canvas</code>来说可以说是利器。<br>对于有图像资源并且需要反复DrawImage时，如果没有做好资源载入控制将带来非常严重的显示问题，<br>例如画面闪烁，绘制区域无内容。因此，建议在开发中使用数组或JSON等序列化所有的游戏资源，然后将相关资源一次性建立相关对象，存储在内存中，以便在下载完毕后，频繁读取时不必再去读图片资源，而是直接读内存中的资源，这样一来，一是速度快了许多，二是稳定性有了保障。<br>并对Canvas总结了以下三点：</p>
+<ul>
+<li>存在大量浮点计算时，建议取整计算；</li>
+<li>对于比较复杂的<code>Canvas</code>，<code>save()</code>、<code>restore()</code>方法可以说是利器</li>
+<li>对于有图像资源并且需要反复DrawImage需做好控制。</li>
+</ul>
+<h2 id="DrawImage消耗测试"><a href="#DrawImage消耗测试" class="headerlink" title="DrawImage消耗测试"></a>DrawImage消耗测试</h2><p>因为<code>Canvas</code>具备「把图片中的某一部分绘制到 Canvas 上」的能力，所以很多时候，我们会把多个图片资源对象放在一张图片里面，以减少请求数量。这通常被称为「精灵图」。然而，这实际上存在着一些潜在的性能问题。<br>经测试发现，在绘制相同大小区域的内容时，使用与绘制区域相同大小的图片会比使用精灵图绘制该区域的的开销要小一些。可以认为，两者相差的开销正是「裁剪」这一个操作的造成的。<br>是用一张200<em>200与200</em>600大小的图进行测试，可发现绘制 10000 次一块 200x200 的矩形区域，花费了 42ms；而如果数据源是一200*600 图片中裁剪出来的 200x200 的区域，绘制 10000 次需要花费 59ms。<br>所以虽然看上去开销相差并不多，但是 <code>drawImage</code> 是最常用的 API 之一，所以还是有必要进行优化的。优化的思路是，将「裁剪」这一步骤事先做好，保存起来，每一帧中仅绘制不裁剪。<br><img src="http://cimg1.fenqile.com/product/M00/DF/E5/hRoGAFpMht2AZeIuAAOrSEnjLrc099.png" alt="Image text"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/canvas/" rel="tag"># canvas</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/02/iPhoneX/" rel="next" title="iPhone X适配">
+                <i class="fa fa-chevron-left"></i> iPhone X适配
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/07/swiper_flow/" rel="prev" title="Swiper如何实现内容超出滑动">
+                Swiper如何实现内容超出滑动 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cartman</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#活动需求"><span class="nav-number">1.</span> <span class="nav-text">活动需求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#游戏实现"><span class="nav-number">2.</span> <span class="nav-text">游戏实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#贪吃蛇绘制思路"><span class="nav-number">2.1.</span> <span class="nav-text">贪吃蛇绘制思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算贪吃蛇方向"><span class="nav-number">2.1.1.</span> <span class="nav-text">计算贪吃蛇方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据坐标绘制贪吃蛇"><span class="nav-number">2.1.2.</span> <span class="nav-text">根据坐标绘制贪吃蛇</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪吃蛇坐标计算"><span class="nav-number">2.1.3.</span> <span class="nav-text">贪吃蛇坐标计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪吃蛇描边效果"><span class="nav-number">2.1.4.</span> <span class="nav-text">贪吃蛇描边效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#食物、红包绘制思路"><span class="nav-number">2.2.</span> <span class="nav-text">食物、红包绘制思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#食物绘制"><span class="nav-number">2.2.1.</span> <span class="nav-text">食物绘制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#红包绘制"><span class="nav-number">2.2.2.</span> <span class="nav-text">红包绘制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他的思考"><span class="nav-number">2.3.</span> <span class="nav-text">其他的思考</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#贪吃蛇进食"><span class="nav-number">2.3.1.</span> <span class="nav-text">贪吃蛇进食</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#坐标计算思路"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">坐标计算思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#性能取舍"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">性能取舍</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#游戏绘制问题"><span class="nav-number">2.4.</span> <span class="nav-text">游戏绘制问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#画布跟随旋转"><span class="nav-number">2.4.1.</span> <span class="nav-text">画布跟随旋转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪吃蛇拐角问题"><span class="nav-number">2.4.2.</span> <span class="nav-text">贪吃蛇拐角问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#游戏问题"><span class="nav-number">2.5.</span> <span class="nav-text">游戏问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#游戏异常卡顿"><span class="nav-number">2.5.1.</span> <span class="nav-text">游戏异常卡顿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定时器导致卡死"><span class="nav-number">2.5.2.</span> <span class="nav-text">定时器导致卡死</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#游戏性能"><span class="nav-number">3.</span> <span class="nav-text">游戏性能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#游戏帧率"><span class="nav-number">3.1.</span> <span class="nav-text">游戏帧率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一加3T（骁龙821）"><span class="nav-number">3.1.1.</span> <span class="nav-text">一加3T（骁龙821）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#红米Note3（骁龙650）"><span class="nav-number">3.1.2.</span> <span class="nav-text">红米Note3（骁龙650）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#魅蓝Note3（联发科-P10）"><span class="nav-number">3.1.3.</span> <span class="nav-text">魅蓝Note3（联发科 P10）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存监测"><span class="nav-number">3.2.</span> <span class="nav-text">内存监测</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思考与总结"><span class="nav-number">4.</span> <span class="nav-text">思考与总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas总结"><span class="nav-number">4.1.</span> <span class="nav-text">Canvas总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DrawImage消耗测试"><span class="nav-number">4.2.</span> <span class="nav-text">DrawImage消耗测试</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cartman</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=64902420";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

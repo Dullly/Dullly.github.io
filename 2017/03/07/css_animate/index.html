@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,animation," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="现目前，CSS动画十分的普遍，但什么是一个好的动画呢？动画的不同实现方式对浏览器又有什么影响？这是一个值得思考的问题 针对本人做过的一个Css动画与收集的相关资料，输出相关思考。">
+<meta name="keywords" content="css,animation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Css动画制作相关思考">
+<meta property="og:url" content="https://dullly.github.io/2017/03/07/css_animate/index.html">
+<meta property="og:site_name" content="Dull&#39;s Blog">
+<meta property="og:description" content="现目前，CSS动画十分的普遍，但什么是一个好的动画呢？动画的不同实现方式对浏览器又有什么影响？这是一个值得思考的问题 针对本人做过的一个Css动画与收集的相关资料，输出相关思考。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/68/hhoGAFpMpUuAI6MKABh3XXzxh-E065.gif">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/68/hhoGAFpMpfmAD8XzAACiq5xAZrc763.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/EF/hRoGAFpMpceAA4AgAAKlBDVZKTU553.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/DF/F3/hRoGAFpMvwWAaOH6AAR-dLShejc860.png">
+<meta property="og:image" content="http://cimg1.fenqile.com/product/M00/D3/6C/hhoGAFpMwBiAB34XAABEfRl68RM033.png">
+<meta property="og:image" content="http://t1.aixinxi.net/o_1c2ttfk98h5u1htu110feu1o2sa.jpg-j.jpg">
+<meta property="og:updated_time" content="2018-01-03T11:55:00.840Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Css动画制作相关思考">
+<meta name="twitter:description" content="现目前，CSS动画十分的普遍，但什么是一个好的动画呢？动画的不同实现方式对浏览器又有什么影响？这是一个值得思考的问题 针对本人做过的一个Css动画与收集的相关资料，输出相关思考。">
+<meta name="twitter:image" content="http://cimg1.fenqile.com/product/M00/D3/68/hhoGAFpMpUuAI6MKABh3XXzxh-E065.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://dullly.github.io/2017/03/07/css_animate/"/>
+
+
+
+
+
+  <title>Css动画制作相关思考 | Dull's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dull's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dullly.github.io/2017/03/07/css_animate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cartman">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dull's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Css动画制作相关思考</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T00:00:00+08:00">
+                2017-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/文章/" itemprop="url" rel="index">
+                    <span itemprop="name">文章</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div class="note info"><p>现目前，CSS动画十分的普遍，但什么是一个好的动画呢？动画的不同实现方式对浏览器又有什么影响？这是一个值得思考的问题</p></div>
+<p>针对本人做过的一个Css动画与收集的相关资料，输出相关思考。<br><a id="more"></a></p>
+<hr>
+<h1 id="如何将动画性能最优-不影响页面流程。"><a href="#如何将动画性能最优-不影响页面流程。" class="headerlink" title="如何将动画性能最优,不影响页面流程。"></a>如何将动画性能最优,不影响页面流程。</h1><h2 id="尽量使用CSS3来书写动画。"><a href="#尽量使用CSS3来书写动画。" class="headerlink" title="尽量使用CSS3来书写动画。"></a>尽量使用CSS3来书写动画。</h2><ul>
+<li>对于chrome及其内核来说，渲染线程分为main thread和compositor thread。如果CSS动画只是改变<code>transform</code> 和<code>opacity</code>，这时整个CSS动画得以在compositor thread完成（而JS动画则会在main thread执行，然后触发<code>compositor</code> 进行下一步操作）</li>
+<li>在JS执行一些昂贵的任务时，main thread繁忙，CSS动画由于使用了compositor thread可以保持流畅<br>使用CSS3书写动画的时间成本比使用JS书写动画的时间成本低，并且在后续修改中相对更改难度低，性能调优方向固定。</li>
+<li>CSS3有兼容性问题，而JS大多时候没有兼容性问题。</li>
+<li>CSS动画有天然事件支持（TransitionEnd、AnimationEnd，但是它们都需要针对浏览器加前缀），JS则需要自己写事件。</li>
+<li>CSS可以促发GPU加速，这样仅触发Composite，不触发<code>layout</code>或<code>paint</code>,其中详见以前的分享的一个链接，<a href="http://taobaofed.org/blog/2016/04/25/performance-composite/" target="_blank" rel="noopener">浏览器渲染坑——无线性能优化Composite</a></li>
+</ul>
+<p>对于不影响感官体验的部分，做到尽可能的图片压缩。如果为春季三月开学大促主会场banner的gif图：各动画效果如下<br><img src="http://cimg1.fenqile.com/product/M00/D3/68/hhoGAFpMpUuAI6MKABh3XXzxh-E065.gif" alt="css动画"><br>可以看出，此动画的难点一共有三，过山车、左下扭动的猫头鹰，以及在下方往返的购物车，不过随后设计放弃下方往返购物车，改为其他动效。针对以上动效，由于过山车与左下扭动的猫头鹰无法使用常规CSS实现而是用雪碧图实现。两张图尽可能压缩后由总共433KB降为77KB，一共减少了82%的体积。如图：<br><img src="http://cimg1.fenqile.com/product/M00/D3/68/hhoGAFpMpfmAD8XzAACiq5xAZrc763.png" alt="css动画"><br>针对剩余元素，全部使用雪碧图进行拼合。但对于中间偷窥的粉色企鹅，如果将中间一大块扣出的话，无疑会增加图片体积，对于需要首屏快速加载的大促主会场来说，无疑是一个大负担。所以针对这里，采用改变粉色企鹅<code>background-position</code>的属性，达到gif动效的效果。主会场的sprite如图1-3(因原图略长，截取部分图像)：共计28.3KB。<br><img src="http://cimg1.fenqile.com/product/M00/DF/EF/hRoGAFpMpceAA4AgAAKlBDVZKTU553.png" alt="css动画"><br>综上，此次banner动画部分加上背景70KB一共需加载170KB左右素材，同时能展示出丰富的动效。</p>
+<h2 id="合理书写动画效果。"><a href="#合理书写动画效果。" class="headerlink" title="合理书写动画效果。"></a>合理书写动画效果。</h2><ul>
+<li><p>合理使用GPU加速<br>合理使用GPU加速告诉浏览器使用GPU对其渲染，减少CPU渲染压力，释放CPU资源对其他线程进行支持。</p>
+</li>
+<li><p>如何触发GPU加速？<br>CSS中一些属性（如transition、CSS3 3D transforms、Canvas、WebGL、Video等）能用来触发GPU渲染，详见<strong> <a href="http://taobaofed.org/blog/2016/04/25/performance-composite/" target="_blank" rel="noopener">无线性能优化：Composite</a> </strong></p>
+</li>
+<li><p>合理触发Composite<br>如图，通过Chrome浏览器的开发者工具可以查看页面元素重绘区域、合成层等，如何使用详见–<strong> <a href="http://www.tuicool.com/articles/YvQ7bq" target="_blank" rel="noopener">Chrome渲染分析之Rendering工具使用</a> </strong><br>打开Rendering中的Layer Borders，查看页面中的合成层，更加详细的情况可以在Timeline中查看（<strong> <a href="http://taobaofed.org/blog/2016/04/25/performance-composite/" target="_blank" rel="noopener">无线性能优化：Composite</a> </strong>  文中对这一点也有讲诉，此处不再赘诉），查看其中影响性能的地方(例如内存占用、重绘等)，然后根据自己需要，对其进行相关优化（例如，主会场中banner牺牲了部分性能换取了更小的图片加载）。<br><img src="http://cimg1.fenqile.com/product/M00/DF/F3/hRoGAFpMvwWAaOH6AAR-dLShejc860.png" alt="动画render"><br>虽然提升合成层会达到更好的性能，这看上去十分美好。但是，创建一个新的合成层并不是免费的，它得消耗额外的内存和管理资源。实际上，在内存资源有限的设备上，合成层带来的性能改善，可能远远赶不上过多合成层开销给页面性能带来的负面影响（试想一下，创建成百上千个合成层，导致内存不断的飙升）。而且因为每个渲染层的纹理都需要上传到 GPU 处理，因此我们还需要考虑 CPU 和 GPU 之间的带宽问题、以及有多大内存供 GPU 处理这些纹理的问题。<br>所以合理的创建合成层是十分有必要的，具体情况还需要看实际项目情况。</p>
+</li>
+<li><p>动画做到自然<br>需要在一开始对于整体动画有一构想，对于细节部分动画有自己的把握，并且与设计师进行沟通交流，理解动画细节与需注意要点。在完成动画后在和设计师进行交流，修正动画差异点。</p>
+</li>
+</ul>
+<hr>
+<h1 id="如何让图片做到体积最小"><a href="#如何让图片做到体积最小" class="headerlink" title="如何让图片做到体积最小"></a>如何让图片做到体积最小</h1><h2 id="将动画中所涉及到的图片尽可能进行组合、拆分放入一张sprite图。"><a href="#将动画中所涉及到的图片尽可能进行组合、拆分放入一张sprite图。" class="headerlink" title="将动画中所涉及到的图片尽可能进行组合、拆分放入一张sprite图。"></a>将动画中所涉及到的图片尽可能进行组合、拆分放入一张sprite图。</h2><p>这样做可以有效的减少请求数量，并且同时能对于零碎化的素材能够很好的进行管理。如图，sprite的大小为182*665，充分利用空间，对各种元素拼合，做到体积最小。<br><img src="http://cimg1.fenqile.com/product/M00/D3/6C/hhoGAFpMwBiAB34XAABEfRl68RM033.png" alt="sprites"></p>
+<ul>
+<li><p>如果条件允许，使用JPEG格式的sprite图。<br>JPEG作为一种压缩图片格式，相对于PNG的天然优势就是有着良好的压缩率，并且JPEG有着一个极其重要的特征——渐进传输（即先传输图像的轮廓，然后逐步传输数据，不断提高图像质量，让图像由朦胧到清晰显示）。在控制体积方面，有着天然优势。</p>
+</li>
+<li><p>对于不影响主体感官的图片进行大程度压缩。<br>对于非主要展示小图片可以调大压缩幅度，这样就算压缩出来有瑕疵也不会被用户肉眼所注意且对整体效果无影响。</p>
+</li>
+</ul>
+<h2 id="使用优良的图片压缩工具"><a href="#使用优良的图片压缩工具" class="headerlink" title="使用优良的图片压缩工具"></a>使用优良的图片压缩工具</h2><p>在这里推荐tinypng这一在线网站，TinyPng使用智能的有损压缩算法，（与pngquant 算法基本类似）通过减少图片的颜色，从而在几乎不影响视觉的情况下，显著的减少图片的体积。相对其他压缩网站来说，基本可以做到很小。</p>
+<p>以下是百度到的在线图片压缩网站与其对比：<br><img src="http://t1.aixinxi.net/o_1c2ttfk98h5u1htu110feu1o2sa.jpg-j.jpg" alt="压缩对比"><br>可以看出，tinypng和图好快这两个网站可以将png压的非常狠，而对视觉影像效果较小，对于一些无需太过精细的图片可以使用一些优良的第三方压缩工具进行压缩。</p>
+<hr>
+<h1 id="如何做到动效还原"><a href="#如何做到动效还原" class="headerlink" title="如何做到动效还原"></a>如何做到动效还原</h1><h2 id="静态设计稿的还原"><a href="#静态设计稿的还原" class="headerlink" title="静态设计稿的还原"></a>静态设计稿的还原</h2><p>要做到动效的还原，首先需要做到将静态设计稿的还原。因为动画部分一般不会设计到文字变动效果，所以做到静态设计稿还原是一大必要。</p>
+<h2 id="动效的还原"><a href="#动效的还原" class="headerlink" title="动效的还原"></a>动效的还原</h2><ul>
+<li>针对一些较为复杂的动效，与设计师进行沟通，确定效果方案，索要动画数据。</li>
+<li>针对设计师所给出的gif图，在与其沟通的基础上，做出初版动效。</li>
+<li>根据设计师所给出的意见，对动画细节进行修改。</li>
+</ul>
+<hr>
+<h1 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h1><ul>
+<li><a href="https://segmentfault.com/q/1010000000645415" target="_blank" rel="noopener">CSS3动画和js动画各有什么优劣</a></li>
+<li><a href="http://taobaofed.org/blog/2016/04/25/performance-composite/" target="_blank" rel="noopener">无线性能优化Composite</a></li>
+<li><a href="https://www.v2ex.com/t/151976" target="_blank" rel="noopener">TinyPNG 的压缩 PNG 算法好厉害</a></li>
+<li><a href="http://www.tuicool.com/articles/YvQ7bq" target="_blank" rel="noopener">Chrome渲染分析之Rendering工具使用</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+            <a href="/tags/animation/" rel="tag"># animation</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/24/ie67problem2/" rel="next" title="IE6/7常见问题 收集及解决（二）">
+                <i class="fa fa-chevron-left"></i> IE6/7常见问题 收集及解决（二）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/02/test/" rel="prev" title="常用整理-H5">
+                常用整理-H5 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cartman</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何将动画性能最优-不影响页面流程。"><span class="nav-number">1.</span> <span class="nav-text">如何将动画性能最优,不影响页面流程。</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#尽量使用CSS3来书写动画。"><span class="nav-number">1.1.</span> <span class="nav-text">尽量使用CSS3来书写动画。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合理书写动画效果。"><span class="nav-number">1.2.</span> <span class="nav-text">合理书写动画效果。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何让图片做到体积最小"><span class="nav-number">2.</span> <span class="nav-text">如何让图片做到体积最小</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#将动画中所涉及到的图片尽可能进行组合、拆分放入一张sprite图。"><span class="nav-number">2.1.</span> <span class="nav-text">将动画中所涉及到的图片尽可能进行组合、拆分放入一张sprite图。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用优良的图片压缩工具"><span class="nav-number">2.2.</span> <span class="nav-text">使用优良的图片压缩工具</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何做到动效还原"><span class="nav-number">3.</span> <span class="nav-text">如何做到动效还原</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#静态设计稿的还原"><span class="nav-number">3.1.</span> <span class="nav-text">静态设计稿的还原</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动效的还原"><span class="nav-number">3.2.</span> <span class="nav-text">动效的还原</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料："><span class="nav-number">4.</span> <span class="nav-text">参考资料：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cartman</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=64902420";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

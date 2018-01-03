@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,canvas," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="背景2014年，一个HTML5游戏——“围住神经猫”以病毒式增长速度刷爆了朋友圈，之后HTML5小游戏就开始一发不可收拾。经过一段时间的酝酿，各个优质的H5纷纷占领各自的朋友圈，如淘宝《穿越整个宇宙向你发来的一封双11邀请函》，腾讯《薛之谦史上最疯狂广告》，天天P图《我的小学生证件照》等等，连起来可以绕地球好多圈。根据ih5报告可以看出，去年一年游戏H5占比达到了23.9%。而休闲类手游不再以制作">
+<meta name="keywords" content="js,canvas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hio预研">
+<meta property="og:url" content="https://dullly.github.io/2017/05/12/hilo/index.html">
+<meta property="og:site_name" content="Dull&#39;s Blog">
+<meta property="og:description" content="背景2014年，一个HTML5游戏——“围住神经猫”以病毒式增长速度刷爆了朋友圈，之后HTML5小游戏就开始一发不可收拾。经过一段时间的酝酿，各个优质的H5纷纷占领各自的朋友圈，如淘宝《穿越整个宇宙向你发来的一封双11邀请函》，腾讯《薛之谦史上最疯狂广告》，天天P图《我的小学生证件照》等等，连起来可以绕地球好多圈。根据ih5报告可以看出，去年一年游戏H5占比达到了23.9%。而休闲类手游不再以制作">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/c4c7e90675bb11e78f965254004b6d18">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/fad4783675be11e79e285254009d059e">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/27b2780875bf11e783f25254009d059e">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/535e301475bf11e797ae5254009d059e">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/724945a475bf11e78ea35254009d059e">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/a857216675bf11e78dd35254004b6d18">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/03c2efa875c011e79b4c5254009d059e">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/286445e675c011e7bd3a5254009d059e">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/4292d45075c011e7b08c5254009d059e">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/f510f4b075c311e78b155254009d059e">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/a150956e75c411e79a4d5254004b6d18">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/e722b3fa75c011e780b75254004b6d18">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/9eaa9e3e75c111e797805254009d059e">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/15e3154e75c211e7ad3f5254009d059e">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/55623a6075c211e7835e5254009d059e">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/ba32d02075c311e7a1ab5254004b6d18">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/99d53f2675c211e7a3e85254004b6d18">
+<meta property="og:image" content="https://lexin.lexiangla.com/assets/a6b6c7c875c211e78b635254004b6d18">
+<meta property="og:updated_time" content="2018-01-03T13:05:09.009Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hio预研">
+<meta name="twitter:description" content="背景2014年，一个HTML5游戏——“围住神经猫”以病毒式增长速度刷爆了朋友圈，之后HTML5小游戏就开始一发不可收拾。经过一段时间的酝酿，各个优质的H5纷纷占领各自的朋友圈，如淘宝《穿越整个宇宙向你发来的一封双11邀请函》，腾讯《薛之谦史上最疯狂广告》，天天P图《我的小学生证件照》等等，连起来可以绕地球好多圈。根据ih5报告可以看出，去年一年游戏H5占比达到了23.9%。而休闲类手游不再以制作">
+<meta name="twitter:image" content="https://lexin.lexiangla.com/assets/c4c7e90675bb11e78f965254004b6d18">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://dullly.github.io/2017/05/12/hilo/"/>
+
+
+
+
+
+  <title>Hio预研 | Dull's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dull's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dullly.github.io/2017/05/12/hilo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cartman">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dull's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hio预研</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-12T00:00:00+08:00">
+                2017-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/文章/" itemprop="url" rel="index">
+                    <span itemprop="name">文章</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div class="note info"><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>2014年，一个HTML5游戏——“围住神经猫”以病毒式增长速度刷爆了朋友圈，之后HTML5小游戏就开始一发不可收拾。经过一段时间的酝酿，各个优质的H5纷纷占领各自的朋友圈，如淘宝《穿越整个宇宙向你发来的一封双11邀请函》，腾讯《薛之谦史上最疯狂广告》，天天P图《我的小学生证件照》等等，连起来可以绕地球好多圈。<br>根据ih5报告可以看出，去年一年游戏H5占比达到了23.9%。而休闲类手游不再以制作精良而取胜，各种奇葩玩法的简单游(微博)戏反而得到用户欢迎。这些H5一般只做目的是促销活动、新品发布，本质上采取的是游戏化营销战略。</p></div>
+<a id="more"></a>
+<p>详细信息可以查看：<a href="http://www.chinaz.com/news/2017/0124/649928.shtml。" target="_blank" rel="noopener">2016年度H5最全报告</a><br><img src="https://lexin.lexiangla.com/assets/c4c7e90675bb11e78f965254004b6d18" alt=""></p>
+<h2 id="前期调查及方案"><a href="#前期调查及方案" class="headerlink" title="前期调查及方案"></a>前期调查及方案</h2><p>根据2016年 最火的<a href="https://www.oschina.net/news/72092/2016-top-15-html5-game-engines" target="_blank" rel="noopener">15 款 HTML5 游戏引擎</a>.可以得到去年一年比较热门的免费HTML5游戏框架，共十五款，各个数据如下</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:center">Updated Time</th>
+<th style="text-align:center">Watch</th>
+<th style="text-align:center">Star</th>
+<th style="text-align:center">Fork</th>
+<th style="text-align:center">Commits</th>
+<th style="text-align:center">Contributors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Three.js</td>
+<td style="text-align:center">2016/3/28</td>
+<td style="text-align:center">1590</td>
+<td style="text-align:center">24041</td>
+<td style="text-align:center">7768</td>
+<td style="text-align:center">14825</td>
+<td style="text-align:center">588</td>
+</tr>
+<tr>
+<td>Phaser.js</td>
+<td style="text-align:center">2016/2/18</td>
+<td style="text-align:center">837</td>
+<td style="text-align:center">11782</td>
+<td style="text-align:center">4095</td>
+<td style="text-align:center">4423</td>
+<td style="text-align:center">206</td>
+</tr>
+<tr>
+<td>Pixi.js</td>
+<td style="text-align:center">2016/3/17</td>
+<td style="text-align:center">656</td>
+<td style="text-align:center">10063</td>
+<td style="text-align:center">1942</td>
+<td style="text-align:center">2860</td>
+<td style="text-align:center">161</td>
+</tr>
+<tr>
+<td>egret</td>
+<td style="text-align:center">2016/3/30</td>
+<td style="text-align:center">215</td>
+<td style="text-align:center">1275</td>
+<td style="text-align:center">303</td>
+<td style="text-align:center">4268</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td>enchantjs.js</td>
+<td style="text-align:center">2016/1/4</td>
+<td style="text-align:center">185</td>
+<td style="text-align:center">1445</td>
+<td style="text-align:center">301</td>
+<td style="text-align:center">1683</td>
+<td style="text-align:center">27</td>
+</tr>
+<tr>
+<td>crafty</td>
+<td style="text-align:center">2016/3/21</td>
+<td style="text-align:center">134</td>
+<td style="text-align:center">2050</td>
+<td style="text-align:center">473</td>
+<td style="text-align:center">1807</td>
+<td style="text-align:center">106</td>
+</tr>
+<tr>
+<td>turbulenz</td>
+<td style="text-align:center">2015/11/23</td>
+<td style="text-align:center">271</td>
+<td style="text-align:center">2544</td>
+<td style="text-align:center">406</td>
+<td style="text-align:center">1737</td>
+<td style="text-align:center">13</td>
+</tr>
+<tr>
+<td>cocos2d-js</td>
+<td style="text-align:center">2016/3/30</td>
+<td style="text-align:center">162</td>
+<td style="text-align:center">1207</td>
+<td style="text-align:center">469</td>
+<td style="text-align:center">4559</td>
+<td style="text-align:center">45</td>
+</tr>
+<tr>
+<td>playcanvas</td>
+<td style="text-align:center">2016/3/30</td>
+<td style="text-align:center">164</td>
+<td style="text-align:center">1784</td>
+<td style="text-align:center">368</td>
+<td style="text-align:center">5142</td>
+<td style="text-align:center">16</td>
+</tr>
+<tr>
+<td>melon.js</td>
+<td style="text-align:center">2016/3/30</td>
+<td style="text-align:center">13</td>
+<td style="text-align:center">1579</td>
+<td style="text-align:center">371</td>
+<td style="text-align:center">390</td>
+<td style="text-align:center">40</td>
+</tr>
+<tr>
+<td>quintus</td>
+<td style="text-align:center">2016/2/03</td>
+<td style="text-align:center">136</td>
+<td style="text-align:center">1023</td>
+<td style="text-align:center">412</td>
+<td style="text-align:center">256</td>
+<td style="text-align:center">33</td>
+</tr>
+<tr>
+<td>Hilo</td>
+<td style="text-align:center">2016/2/03</td>
+<td style="text-align:center">173</td>
+<td style="text-align:center">2449</td>
+<td style="text-align:center">340</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+<p>因为业务核心点为营销，无需开发大型重量级H5游戏，所以选择其中较为轻量的框架。所以放弃如Egret(白鹭)引擎等，尽管其拥有着良好的中文文档与开发者社区。<br>又例如Three.js，体积约490KB，拥有着高性能的3D WebGL效果，并且能够让我们无需关注webgl实现方式，写出特别炫酷的效果，但相对的是其入门难度高，并且中文资料老旧，网络上Three.js方面的资料比较散乱且良莠不齐，部分中文文档翻译低级错误频出，英文文档本身比较简陋且有不少拷贝错误。<br>Pixi.js约358KB，与Three.js相同的是，其拥有着高性能的WebGL模式2D渲染引擎，但是也是英文文档；<br>而Hilo的设计思路更加偏向前端开发者以及简单的营销活动小游戏。经过压缩后体积约65KB，相对于上面两个来说，已经算十分的轻量了。并且拥有中文文档，对于中文开发者来说十分友好，且已经经历多届阿里巴巴双十一，年中大促互动营销活动考验。对于我们业务来说，只需要适配对canvas和css3支持度良好的高级浏览器或者webview，直接使用Hilo基础渲染器而无需在引入其他模块，做到了体积最小。</p>
+<h2 id="预研"><a href="#预研" class="headerlink" title="预研"></a>预研</h2><h4 id="框架概述"><a href="#框架概述" class="headerlink" title="框架概述"></a>框架概述</h4><p>借用Hilo Github上原话：Hilo 是阿里巴巴集团开发的一款HTML5跨终端游戏解决方案，ta可以帮助开发者快速创建HTML5游戏。<br>官方宣传的其主要特性有一下几点：</p>
+<ul>
+<li>Hilo 支持多种模块范式的包装版本，包括AMD，CMD，COMMONJS，Standalone多种方式接入。另外，你可以根据需要新增和扩展模块和类型；</li>
+<li>极精简的模块设计，完全面向对象；</li>
+<li>多种渲染方式, 提供DOM，Canvas，Flash，WebGL等多种渲染方案（目前已经申请专利）；</li>
+<li>全端浏览器的支持和高性能方案，独有的Flash渲染方案，即使在低版本IE浏览器下也可以跑起来“酷炫”游戏； DOM渲染方案能显著解决低性能手机浏览器遇到的性能问题；</li>
+<li>物理引擎支持——Chipmunk，支持自扩展物理实现；骨骼动画支持——DragonBones，同时内建骨骼动画系统——Tahiti（目前内部使用）；</li>
+<li>案例丰富，框架成熟，已经经历多届阿里巴巴双十一，年中大促互动营销活动考验；<br>其余详细信息可参见其<a href="http://hiloteam.github.io/Hilo/docs/api-zh/index.html" target="_blank" rel="noopener">Github官网</a></li>
+</ul>
+<p>再经过通过其他的一些相关资料收集，总结出Hilo对于开发人员来说的一些优点：</p>
+<ul>
+<li>支持canvas dom webgl 三种渲染方式（官方说有FLASH），希望未来的版本能够自适应浏览器，这将是一个巨大的亮点！ </li>
+<li>支持Canvas的位移，Transform等常见动画效果。</li>
+<li>支持导入图片、绘制常见形状等，并且，支持SVG绘图。</li>
+<li>支持2D、伪3D。</li>
+<li>支持WebGL ，目前没有实现相关3D模型的封装。</li>
+<li>自带粒子系统、缓动函数，WebSound可以自适应各种平台。</li>
+<li>对于静态、复杂的场景，自动使用DIV潜入静态图片或文字，以提升效率（比如背景图片）。</li>
+</ul>
+<p>在经过预研之后，发现Hilo无疑是对我们现在业务来讲最为合适的轻量游戏框架，为了对其进行更深一步研究，仿照双十一红包雨，使用Hilo进行实现，探究其内部的内容。以下列出几点两者实现方式对比（因为整体红包雨实现逻辑不同，所以仅列举部分进行比较）：</p>
+<ol>
+<li><p>补间动画：<br>补间是一个概念，允许您以平滑的方式更改对象的属性值。您只需要知道要更改哪些属性，当补间程序运行结束时应该具有哪些最终值，以及应该花费多长时间，补间引擎将会从开始到结束点处理中间值。<br>双十一红包雨补间动画计算与移动是通过人工编写，代码如下：<br><img src="https://lexin.lexiangla.com/assets/fad4783675be11e79e285254009d059e" alt="双十一红包雨补间动画"><br>Hilo红包雨补间动画计算与移动则通过Tween.js进行计算，并且提供多种的缓动功能，如线性，二次，立方，四分，五次，正弦，指数，圆形，弹性，反向和反弹等。调用代码如下：<br><img src="https://lexin.lexiangla.com/assets/27b2780875bf11e783f25254009d059e" alt=""><br>可以看出，原生实现的优势在于可以减少引入代码量，但却要增加手写工作量；而引入Hilo(集成了Twenn.js)优势在于可以少写很多代码，但缺点是增加了页面体积。</p>
+</li>
+<li><p>资源加载：<br> 双十一红包雨自己编写资源加载器。如图:<br><img src="https://lexin.lexiangla.com/assets/535e301475bf11e797ae5254009d059e" alt=""><br>Hilo已经为我们封装好相应的资源预加载模块，如图:<br><img src="https://lexin.lexiangla.com/assets/724945a475bf11e78ea35254009d059e" alt=""></p>
+</li>
+<li><p>资源管理:<br>双十一红包雨通过将一系列素材以及素材状态放入数组进行管理，后续需要人为的去更新、删除等。如图:<br><img src="https://lexin.lexiangla.com/assets/a857216675bf11e78dd35254004b6d18" alt=""><br>而通过使用Hilo，可以不用关心素材管理，通过将素材挂载在创建的Container中，Hilo为我们自动化的进行管理。<img src="https://lexin.lexiangla.com/assets/03c2efa875c011e79b4c5254009d059e" alt=""></p>
+</li>
+<li><p>素材添加：<br> 双十一红包雨同样是通过原生canvas方法实现。如图<br><img src="https://lexin.lexiangla.com/assets/286445e675c011e7bd3a5254009d059e" alt=""><br>Hilo红包雨则是通过Hilo提供的位图方法建立红包,节省编码时间，如图<br><img src="https://lexin.lexiangla.com/assets/4292d45075c011e7b08c5254009d059e" alt=""></p>
+</li>
+<li><p>最终效果：<br>最终两者效果如下<br><img src="https://lexin.lexiangla.com/assets/f510f4b075c311e78b155254009d059e" alt=""> <img src="https://lexin.lexiangla.com/assets/a150956e75c411e79a4d5254004b6d18" alt=""></p>
+</li>
+</ol>
+<p>在完成仿制红包雨后，总结了一些Hilo的优缺点（仅针对个人在实验过程中发现的优缺点，并不能代表整个框架的优缺点）</p>
+<h5 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h5><ul>
+<li>学习之后，可以进行快速的轻量级互动游戏类页面开发。</li>
+<li>对于前端开发者来说，学习成本较其他低。</li>
+<li>相较于其他互动游戏解决方案，Hilo总体只有60多KB。</li>
+<li>整合了Tween,Ease，具有缓动效果。</li>
+<li>具有中文Api文档，对中文开发者友好。</li>
+</ul>
+<h5 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h5><ul>
+<li>API文档略简洁，实例相对较少，困难解决成本相对较高。</li>
+<li>一些功能并不完善，例如drag拖动等（开始拖动时，被拖动元素并不是自动的提升到最高层级，会被其他更高层级物体盖住）。</li>
+<li>部分方法内部实现方式略简单粗暴。</li>
+</ul>
+<p>##拼图预热活动</p>
+<h3 id="需求效果："><a href="#需求效果：" class="headerlink" title="需求效果："></a>需求效果：</h3><ol>
+<li>传入一张整图，等分九宫格</li>
+<li>可以在边界内自由进行拖拽，当进入九格中任意一格时，取消拖拽事件后能完美的放置于格子中。</li>
+<li>拖拽完成后无法在进行拖拽。</li>
+<li>具有定时器，计步等功能。</li>
+</ol>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
+<li>拼图图像初始化：</li>
+</ol>
+<ul>
+<li>创建一个Container容器用于放置拼图内容，针对非正方形图片进行拉升。<br>在Hilo中，Container是所有容器类的基类。每个Container都可以添加其他可视对象为子级。相较于使用Canvas需要设置繁多，在Hilo中只需要实例化一个Container容器用于放置素材并设置属性就行了。<br><img src="https://lexin.lexiangla.com/assets/e722b3fa75c011e780b75254004b6d18" alt=""></li>
+<li>根据传入参数进行分割（如3<em>3/4</em>4等），位置随机但不会出现一开始拼图就完成的情况。<br>在位置进行变化时使用Hilo中整合的Tween.js自动创建补间动画，使拼图块移动自然不生硬。<br><img src="https://lexin.lexiangla.com/assets/9eaa9e3e75c111e797805254009d059e" alt=""></li>
+</ul>
+<ol>
+<li>拼图拖拽</li>
+</ol>
+<ul>
+<li>对分割的图象绑定拖拽事件，每次拖拽完成都会判断一次游戏是否结束，当游戏结束时将游戏状态返回。<br>这里使用Hilo封装好的拖拽函数startDrag，开始监听拖拽事件,如图<br><img src="https://lexin.lexiangla.com/assets/15e3154e75c211e7ad3f5254009d059e" alt=""></li>
+<li>此处有一难点，如何在用户拖动拼图的时候自动吸附到对应的格子。出于游戏体验与扩展性，在游戏初始化时将图像分割数限定在了&gt;=2，&lt;=4这一范围，所以拖动的格子不会大于4，所以拟合一个多次方程，使其满足：传入图像本身移动距离，输出图像应该移动的距离，使其只能移动到事先分割的格子中，并且当进入一定范围内，松手图片可以完美的放置在格子中。</li>
+<li>每一次成功的图像交换，步数加一。</li>
+<li>当游戏结束，删除拖拽事件。<br>Hilo使用stopDrag停止监听拖拽事件：<br><img src="https://lexin.lexiangla.com/assets/55623a6075c211e7835e5254009d059e" alt=""></li>
+</ul>
+<p>###实现效果<br><img src="https://lexin.lexiangla.com/assets/ba32d02075c311e7a1ab5254004b6d18" alt=""></p>
+<p>###性能<br>因为Hilo整体体积约65KB，通过Chrome控制台观察，在模拟常规4G网络速度加载的情况下，大概花费了721ms，在Wifi情况下加载时间约为100ms。<br>在拼图初始化时，通过Hilo的Ticker函数将运行帧率控制在24帧左右，在这一帧率人体肉眼可以看到连续画面不会出现卡顿感，并且相比于高帧率可以有效的降低性能消耗。在通过Chrome工具Timeline观察可知，在拼图初始化过程中，运行帧率也是在24帧左右,可以流畅的运行。<br><img src="https://lexin.lexiangla.com/assets/99d53f2675c211e7a3e85254004b6d18" alt=""><img src="https://lexin.lexiangla.com/assets/a6b6c7c875c211e78b635254004b6d18" alt=""></p>
+<h3 id="扩展-兼容性"><a href="#扩展-兼容性" class="headerlink" title="扩展/兼容性"></a>扩展/兼容性</h3><ul>
+<li>每个大功能模块皆挂载在window.game下，不造成变量污染。 </li>
+<li>理论上可以做到任意N<em>N个分割，但不建议分割为4</em>4以上。</li>
+<li>针对不是正方形的图片进行了拉伸处理。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>经过两个项目的开发，个人认为hilo作为一款轻量级的营销游戏类H5引擎还是不错的，能够帮助我们减轻开发负担，提高开发效率；但毕竟没有对Hilo进行更多的研究，其中也有很多其他的坑是还没有踩到的，根据网上其他的开发者的描述来说，Hilo还是有很多不足之处，也希望开发者能够更多的完善它。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a href="http://www.chinaz.com/news/2017/0124/649928.shtml" target="_blank" rel="noopener">2016年度H5最全报告：原来这行水这么深</a></li>
+<li><a href="http://hiloteam.github.io/index.htm" target="_blank" rel="noopener">Hilo官方网站</a></li>
+<li><a href="https://www.oschina.net/news/72092/2016-top-15-html5-game-engines" target="_blank" rel="noopener">2016年最火的15款HTML5 游戏引擎</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/canvas/" rel="tag"># canvas</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/27/ar_web1/" rel="next" title="Web AR 预研二三事">
+                <i class="fa fa-chevron-left"></i> Web AR 预研二三事
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/15/vue-base4/" rel="prev" title="Vue动画/过渡效果">
+                Vue动画/过渡效果 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cartman</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前期调查及方案"><span class="nav-number">2.</span> <span class="nav-text">前期调查及方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预研"><span class="nav-number">3.</span> <span class="nav-text">预研</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#框架概述"><span class="nav-number">3.0.1.</span> <span class="nav-text">框架概述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#优点："><span class="nav-number">3.0.1.1.</span> <span class="nav-text">优点：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缺点："><span class="nav-number">3.0.1.2.</span> <span class="nav-text">缺点：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求效果："><span class="nav-number">3.1.</span> <span class="nav-text">需求效果：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">3.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展-兼容性"><span class="nav-number">3.3.</span> <span class="nav-text">扩展/兼容性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cartman</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=64902420";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

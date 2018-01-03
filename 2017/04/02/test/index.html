@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="此文为在工作中遇到一些需要复用或者常见的代码收集">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用整理-H5">
+<meta property="og:url" content="https://dullly.github.io/2017/04/02/test/index.html">
+<meta property="og:site_name" content="Dull&#39;s Blog">
+<meta property="og:description" content="此文为在工作中遇到一些需要复用或者常见的代码收集">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://sfault-image.b0.upaiyun.com/307/609/3076091898-57e229a0e8ee7_articlex">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/eca7d309gw1f94h1et7aej20er03yjrn.jpg">
+<meta property="og:updated_time" content="2018-01-03T13:12:36.174Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常用整理-H5">
+<meta name="twitter:description" content="此文为在工作中遇到一些需要复用或者常见的代码收集">
+<meta name="twitter:image" content="https://sfault-image.b0.upaiyun.com/307/609/3076091898-57e229a0e8ee7_articlex">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://dullly.github.io/2017/04/02/test/"/>
+
+
+
+
+
+  <title>常用整理-H5 | Dull's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dull's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dullly.github.io/2017/04/02/test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cartman">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dull's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">常用整理-H5</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-02T00:00:00+08:00">
+                2017-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div class="note info"><p>此文为在工作中遇到一些需要复用或者常见的代码收集</p></div>
+<a id="more"></a>
+<h4 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@ppr: 75px/1rem;</div><div class="line">body&#123;</div><div class="line">    max-width: 750px/@ppr;</div><div class="line">    margin-left: auto;</div><div class="line">    margin-right: auto;</div><div class="line">    background-color: XXXXX;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h4 id="占位图"><a href="#占位图" class="headerlink" title="占位图"></a>占位图</h4><p><code>http://www.fenqile.com/dummy/image/690x200</code></p>
+<h4 id="标题文字隐藏"><a href="#标题文字隐藏" class="headerlink" title="标题文字隐藏"></a>标题文字隐藏</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.movie-h3</span>&#123;</div><div class="line">    <span class="attribute">line-height</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">overflow</span>:hidden;   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="默认透明图"><a href="#默认透明图" class="headerlink" title="默认透明图"></a>默认透明图</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">data-src</span>=<span class="string">"./img/coupon.png"</span> <span class="attr">src</span>=<span class="string">"//cres2.fenqile.cn/sale/img/core/pc/default.png"</span> <span class="attr">class</span>=<span class="string">"imgauto"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="公共底部"><a href="#公共底部" class="headerlink" title="公共底部"></a>公共底部</h4><pre><code>.com-bottom-wrap{padding-bottom:2 rem!important}
+</code></pre><hr>
+<h4 id="background"><a href="#background" class="headerlink" title="background"></a>background</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">background-image: url(../img/diamond.png);</div><div class="line">background-position:0 -157.5px;</div><div class="line">background-repeat: no-repeat;</div><div class="line">background-size: 19px auto;</div></pre></td></tr></table></figure>
+<hr>
+<h4 id="兼容IE7-8-9的背景遮罩"><a href="#兼容IE7-8-9的背景遮罩" class="headerlink" title="兼容IE7 8 9的背景遮罩"></a>兼容IE7 8 9的背景遮罩</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>背景透明，文字不透明<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">.demo&#123;</div><div class="line">  padding: 25px;</div><div class="line">  background-color: rgba(0,0,0,0.5);/* IE9、标准浏览器、IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂 */</div><div class="line">&#125;</div><div class="line">.demo p&#123;</div><div class="line">  color: #FFFFFF;</div><div class="line">&#125;</div><div class="line">@media \0screen\,screen\9 &#123;/* hack,只支持IE6、7、8 */</div><div class="line">  .demo&#123;</div><div class="line">    background-color:#000000;</div><div class="line">    filter:Alpha(opacity=50);</div><div class="line">    position:static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */</div><div class="line">    *zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */</div><div class="line">  &#125;</div><div class="line">  .demo p&#123;</div><div class="line">    position: relative;/* 设置子元素为相对定位，可让子元素不继承Alpha值 */</div><div class="line">  &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h4 id="吸底箭头动画"><a href="#吸底箭头动画" class="headerlink" title="吸底箭头动画"></a>吸底箭头动画</h4><blockquote>
+<p>需修改,将before位置放置在span之后，不然会影响效果</p>
+</blockquote>
+<p><a href="http://sale.fenqile.com/VlVdQ0hcVV9FSFRVXkFM/index.html" target="_blank" rel="noopener">example</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line">span&#123;</div><div class="line">    position: relative;</div><div class="line">    display: inline-block;</div><div class="line">    width: .2rem;</div><div class="line">    height: .2rem;</div><div class="line">    border-width: .07rem;</div><div class="line">    border-style: solid;</div><div class="line">    border-color: currentcolor currentcolor transparent transparent;</div><div class="line">    -webkit-transform: rotate(45deg);</div><div class="line">    transform: rotate(45deg);</div><div class="line">     margin-left: 0;</div><div class="line">    opacity: 1;</div><div class="line">    -webkit-animation: run 2s infinite;</div><div class="line">    animation: run 2s infinite;</div><div class="line">    &amp;:before,</div><div class="line">    &amp;:after&#123;</div><div class="line">        position: absolute;</div><div class="line">        content:'';</div><div class="line">        width: .2rem;</div><div class="line">        height: .2rem;</div><div class="line">        border-width: .07rem;</div><div class="line">        border-style: solid;</div><div class="line">        border-color: currentcolor currentcolor transparent transparent;</div><div class="line">    &#125;</div><div class="line">    &amp;:before&#123;</div><div class="line">        top: -8px;</div><div class="line">        left: 4px;</div><div class="line">        opacity: .5;</div><div class="line">        -webkit-animation: run1 2s infinite;</div><div class="line">        animation: run1 2s infinite;</div><div class="line">        &#125;</div><div class="line">    &amp;:after&#123;</div><div class="line">        top: -14px;</div><div class="line">        left: 10px;</div><div class="line">        opacity: .28;</div><div class="line">        -webkit-animation: run2 2s infinite;</div><div class="line">        animation: run2 2s infinite;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">/* 兼容ipad分辨率 */</div><div class="line">@media screen and (min-width:768px)&#123;</div><div class="line">    .XXX父层&#123;</div><div class="line">        span&#123;</div><div class="line">            &amp;:before&#123;</div><div class="line">                top: -17px;</div><div class="line">                left: 7px;</div><div class="line">                &#125;</div><div class="line">            &amp;:after&#123;</div><div class="line">                top: -29px;</div><div class="line">                left: 19px;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@keyframes run&#123;</div><div class="line">    0&#123;opacity: 1;&#125;</div><div class="line">    50%&#123;opacity: 0;&#125;</div><div class="line">    100%&#123;opacity: 1;&#125;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes run&#123;</div><div class="line">    0&#123;opacity: 1;&#125;</div><div class="line">    50%&#123;opacity: 0;&#125;</div><div class="line">    100%&#123;opacity: 1;&#125;</div><div class="line">&#125;</div><div class="line">@keyframes run1&#123;</div><div class="line">    0&#123;opacity: .6;&#125;</div><div class="line">    50%&#123;opacity: 0;&#125;</div><div class="line">    100%&#123;opacity: .6;&#125;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes run1&#123;</div><div class="line">    0&#123;opacity: .6;&#125;</div><div class="line">    50%&#123;opacity: 0;&#125;</div><div class="line">    100%&#123;opacity: .6;&#125;</div><div class="line">&#125;</div><div class="line">@keyframes run2&#123;</div><div class="line">    0&#123;opacity: .4;&#125;</div><div class="line">    50%&#123;opacity: 0;&#125;</div><div class="line">    100%&#123;opacity: .4;&#125;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes run2&#123;</div><div class="line">    0&#123;opacity: .4;&#125;</div><div class="line">    50%&#123;opacity: 0;&#125;</div><div class="line">    100%&#123;opacity: .4;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h4 id="CSS倒影"><a href="#CSS倒影" class="headerlink" title="CSS倒影"></a>CSS倒影</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span>&#123;</div><div class="line">     <span class="attribute">-webkit-box-reflect</span>: below <span class="number">0</span> <span class="built_in">-webkit-linear-gradient</span>(rgba(250, 250, 250, 0), <span class="built_in">rgba</span>(250, 250, 250, 0) <span class="number">30%</span>, <span class="built_in">rgba</span>(250, 250, 250, 0.3));</div><div class="line">     <span class="attribute">box-reflect</span>: below <span class="number">0</span> <span class="built_in">linear-gradient</span>(rgba(250, 250, 250, 0), <span class="built_in">rgba</span>(250, 250, 250, 0) <span class="number">30%</span>, <span class="built_in">rgba</span>(250, 250, 250, 0.3));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h4 id="swiper组件"><a href="#swiper组件" class="headerlink" title="swiper组件"></a>swiper组件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    seajs.use([<span class="string">'swiper/h5/1.0.0/swiper.js'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">Swiper</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> swiper = <span class="keyword">new</span> Swiper(<span class="string">'.swiper-container'</span>, &#123;</div><div class="line">            <span class="attr">direction</span> : <span class="string">'horizontal'</span>,</div><div class="line">            <span class="attr">autoplay</span> : <span class="number">5000</span>,</div><div class="line">            <span class="attr">slidesPerView</span> : <span class="number">3</span></div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<hr>
+<h4 id="CSS锯齿"><a href="#CSS锯齿" class="headerlink" title="CSS锯齿"></a>CSS锯齿</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="css"></span></div><div class="line"><span class="selector-class">.toothbg</span>&#123;<span class="attribute">width</span>:<span class="number">100%</span>;<span class="attribute">height</span>:<span class="number">20px</span>;<span class="attribute">background</span>:<span class="number">#41B61A</span>;</div><div class="line">    <span class="attribute">background-image</span>:<span class="built_in">-webkit-gradient</span>(linear,50% 0,0 100%,from(transparent), <span class="built_in">color-stop</span>(.5,transparent),<span class="built_in">color-stop</span>(.5,#e5e5e5),<span class="built_in">to</span>(#e5e5e5)),</div><div class="line">                    <span class="built_in">-webkit-gradient</span>(linear,50% 0,100% 100%,from(transparent), <span class="built_in">color-stop</span>(.5,transparent),<span class="built_in">color-stop</span>(.5,#e5e5e5),<span class="built_in">to</span>(#e5e5e5));</div><div class="line">    <span class="attribute">background-image</span>:<span class="built_in">-moz-linear-gradient</span>(50% 0 -45deg,transparent,transparent 50%,#e5e5e5 50%,#e5e5e5),</div><div class="line">                    <span class="built_in">-moz-linear-gradient</span>(50% 0 -135deg,transparent,transparent 50%,#e5e5e5 50%,#e5e5e5);                               </div><div class="line">    <span class="attribute">background-size</span>:<span class="number">30px</span> <span class="number">15px</span>;</div><div class="line">    <span class="attribute">background-repeat</span>:repeat-x;</div><div class="line">    <span class="attribute">background-position</span>:<span class="number">0</span> <span class="number">100%</span>;                   </div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"toothbg"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<hr>
+<h4 id="悬浮窗关闭按钮一般写法"><a href="#悬浮窗关闭按钮一般写法" class="headerlink" title="悬浮窗关闭按钮一般写法"></a>悬浮窗关闭按钮一般写法</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">.close-btn&#123;</div><div class="line">    position: absolute;</div><div class="line">    top: 5px;</div><div class="line">    right: 6px;</div><div class="line">    width: 29px;</div><div class="line">    height: 29px;</div><div class="line">    span&#123;</div><div class="line">        position: relative;</div><div class="line">        display: block;</div><div class="line">        width: 100%;</div><div class="line">        height: 100%;</div><div class="line">        -webkit-transform: rotate(45deg);</div><div class="line">        transform: rotate(45deg);           </div><div class="line">        &amp;:before&#123;</div><div class="line">            content: "";</div><div class="line">            position: absolute;</div><div class="line">            top: 14px;</div><div class="line">            left: 4px;</div><div class="line">            width: 21px;</div><div class="line">            height: 1px;</div><div class="line">            background-color: #808080;</div><div class="line">        &#125;</div><div class="line">        &amp;:after&#123;</div><div class="line">            content: "";</div><div class="line">            position: absolute;</div><div class="line">            top: 4px;</div><div class="line">            left: 14px;</div><div class="line">            height: 21px;</div><div class="line">            width: 1px;</div><div class="line">            background-color: #808080;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h4 id="li非等高布局"><a href="#li非等高布局" class="headerlink" title="li非等高布局"></a>li非等高布局</h4><p><a href="https://segmentfault.com/q/1010000006963211" target="_blank" rel="noopener">示例</a> </p>
+<p><img src="https://sfault-image.b0.upaiyun.com/307/609/3076091898-57e229a0e8ee7_articlex" alt=""><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span>&#123; <span class="attribute">width</span>:<span class="number">100%</span>;&#125;</div><div class="line"><span class="selector-tag">li</span>&#123;<span class="attribute">width</span>:<span class="number">25%</span>;<span class="attribute">float</span>:left; <span class="attribute">height</span>:<span class="number">30px</span>;&#125;</div><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span>&#123; <span class="attribute">width</span>:<span class="number">50%</span>; <span class="attribute">height</span>:<span class="number">60px</span>;&#125;</div></pre></td></tr></table></figure>
+<h4 id="爆品区"><a href="#爆品区" class="headerlink" title="爆品区"></a>爆品区</h4><p><img src="http://ww2.sinaimg.cn/large/eca7d309gw1f94h1et7aej20er03yjrn.jpg" alt=""><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page-titile"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>最热&amp;nbsp;<span class="tag">&lt;<span class="name">em</span>&gt;</span>爆品区<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">.page-titile&#123;</div><div class="line">        position: relative;</div><div class="line">        width: 100%;</div><div class="line">        height: 150px/@ppr;</div><div class="line">        .page-sprite;</div><div class="line">        background-position: 0 0;</div><div class="line">        h2&#123;</div><div class="line">            .cen-trans(both);</div><div class="line">            top: 60%;</div><div class="line">            display: inline-block;</div><div class="line">            height: 45px/@ppr;</div><div class="line">            line-height: 45px/@ppr;</div><div class="line">            padding:0 10px;</div><div class="line">            font-size: 40px/@ppr;</div><div class="line">            font-weight: bold;</div><div class="line">            color: #fee352;</div><div class="line">            em&#123;</div><div class="line">                color: #fff;</div><div class="line">                font-weight: bold;</div><div class="line">            &#125;</div><div class="line">            &amp;:before,</div><div class="line">            &amp;:after&#123;</div><div class="line">                position: absolute;</div><div class="line">                top: 33%;</div><div class="line">                width: 90px/@ppr;</div><div class="line">                height: 15px/@ppr;</div><div class="line">                content:'';</div><div class="line">                display: inline-block;</div><div class="line">                .page-sprite;</div><div class="line">                background-position: -90px/@ppr -160px/@ppr;</div><div class="line">            &#125;</div><div class="line">            &amp;:before&#123; left: -90px/@ppr; &#125;</div><div class="line">            &amp;:after&#123; right: -90px/@ppr; &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h4 id="返回顶部"><a href="#返回顶部" class="headerlink" title="返回顶部"></a>返回顶部</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 返回顶部[[ --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">"page-go-top js-go-top"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">aside</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 返回顶部]] --&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line">/* 返回顶部 */</div><div class="line">.page-go-top&#123;</div><div class="line">    display: block;</div><div class="line">    width: 44px;</div><div class="line">    height: 44px;</div><div class="line">    opacity: .8;</div><div class="line">    border-radius: 50%;</div><div class="line">    position: fixed;</div><div class="line">    bottom: 50px;</div><div class="line">    right: 10px;</div><div class="line">    z-index: 10;</div><div class="line">    border: 1px solid #666;</div><div class="line">    background-color: rgba(255,255,255,.75);</div><div class="line">    &amp;:before&#123;</div><div class="line">        content: "";</div><div class="line">        width: 8px;</div><div class="line">        height: 8px;</div><div class="line">        border-style: solid;</div><div class="line">        border-color: #929292;</div><div class="line">        border-width:2px 2px 0 0;</div><div class="line">        display: block;</div><div class="line">        position: absolute;</div><div class="line">        left: 50%;</div><div class="line">        margin-left: -5px;</div><div class="line">        top: 14px;</div><div class="line">        -webkit-transform:rotate(-45deg);</div><div class="line">        -moz-transform:rotate(-45deg);</div><div class="line">        -ms-transform:rotate(-45deg);</div><div class="line">        transform:rotate(-45deg);</div><div class="line">    &#125;</div><div class="line">    &amp;:after&#123;</div><div class="line">        content: "";</div><div class="line">        width: 2px;</div><div class="line">        height: 14px;</div><div class="line">        background-color: #929292;</div><div class="line">        display: block;</div><div class="line">        position: absolute;</div><div class="line">        left: 50%;</div><div class="line">        margin-left: -1px;</div><div class="line">        top: 14px;</div><div class="line">    &#125;</div><div class="line">    span&#123;</div><div class="line">        position: absolute;</div><div class="line">        top: 8px;</div><div class="line">        left: 13px;</div><div class="line">        width: 18px;</div><div class="line">        height: 2px;</div><div class="line">        background-color: #929292;</div><div class="line">    &#125;</div><div class="line">    p&#123;</div><div class="line">        position: absolute;</div><div class="line">        bottom: 2px;</div><div class="line">        width: 100%;</div><div class="line">        text-align: center;</div><div class="line">        font-size: 10px;</div><div class="line">        color: #666;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>$ad_pic = $config[&apos;ad_pic&apos;];
+</code></pre><!-- 广告位[[ -->
+<pre><code>&lt;section class=&quot;page-pic&quot;&gt;
+    &lt;div class=&quot;pic-wrap&quot;&gt;
+        &lt;?php foreach ($ad_pic[&apos;top&apos;] as $item) :?&gt;
+            &lt;a href=&quot;&lt;?php echo $item[&apos;link&apos;];?&gt;&quot;  class=&quot;pic_two&quot;&gt;
+                &lt;img data-src=&quot;&lt;?php echo $item[&apos;img_src&apos;]?&gt;&quot; src=&quot;//cres2.fenqile.cn/sale/img/core/h5/default.png&quot; class=&quot;imgauto&quot;&gt;
+            &lt;/a&gt;
+        &lt;?php endforeach ?&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;pic-wrap&quot;&gt;
+        &lt;?php foreach ($ad_pic[&apos;bottom&apos;] as $item) :?&gt;
+            &lt;a href=&quot;&lt;?php echo $item[&apos;link&apos;];?&gt;&quot; class=&quot;pic_three&quot;&gt;
+                &lt;img data-src=&quot;&lt;?php echo $item[&apos;img_src&apos;]?&gt;&quot; src=&quot;//cres2.fenqile.cn/sale/img/core/h5/default.png&quot; class=&quot;imgauto&quot;&gt;
+            &lt;/a&gt;
+        &lt;?php endforeach ?&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- 广告位]] --&gt;
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/07/css_animate/" rel="next" title="Css动画制作相关思考">
+                <i class="fa fa-chevron-left"></i> Css动画制作相关思考
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/15/vue-base1/" rel="prev" title="Vue属性与方法">
+                Vue属性与方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cartman</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#开头"><span class="nav-number">1.</span> <span class="nav-text">开头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#占位图"><span class="nav-number">2.</span> <span class="nav-text">占位图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标题文字隐藏"><span class="nav-number">3.</span> <span class="nav-text">标题文字隐藏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认透明图"><span class="nav-number">4.</span> <span class="nav-text">默认透明图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#公共底部"><span class="nav-number">5.</span> <span class="nav-text">公共底部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#background"><span class="nav-number">6.</span> <span class="nav-text">background</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#兼容IE7-8-9的背景遮罩"><span class="nav-number">7.</span> <span class="nav-text">兼容IE7 8 9的背景遮罩</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#吸底箭头动画"><span class="nav-number">8.</span> <span class="nav-text">吸底箭头动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS倒影"><span class="nav-number">9.</span> <span class="nav-text">CSS倒影</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#swiper组件"><span class="nav-number">10.</span> <span class="nav-text">swiper组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS锯齿"><span class="nav-number">11.</span> <span class="nav-text">CSS锯齿</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#悬浮窗关闭按钮一般写法"><span class="nav-number">12.</span> <span class="nav-text">悬浮窗关闭按钮一般写法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#li非等高布局"><span class="nav-number">13.</span> <span class="nav-text">li非等高布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#爆品区"><span class="nav-number">14.</span> <span class="nav-text">爆品区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#返回顶部"><span class="nav-number">15.</span> <span class="nav-text">返回顶部</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cartman</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=64902420";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
