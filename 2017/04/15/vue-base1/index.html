@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="数据绑定 数据绑定使用  的格式绑定数据 数据双向绑定 v-model12v-model 指令在表单控件元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。vuejs双向绑定并不能适用于所有的html表单，限制为input、select、textarea、components。">
+<meta name="description" content="基础操作数据绑定 数据绑定使用  的格式绑定数据 数据双向绑定 v-model12v-model 指令在表单控件元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。vuejs双向绑定并不能适用于所有的html表单，限制为input、select、textarea、components。">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue属性与方法">
+<meta property="og:title" content="Vue学习相关笔记">
 <meta property="og:url" content="https://dullly.github.io/2017/04/15/vue-base1/index.html">
 <meta property="og:site_name" content="Dull&#39;s Blog">
-<meta property="og:description" content="数据绑定 数据绑定使用  的格式绑定数据 数据双向绑定 v-model12v-model 指令在表单控件元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。vuejs双向绑定并不能适用于所有的html表单，限制为input、select、textarea、components。">
+<meta property="og:description" content="基础操作数据绑定 数据绑定使用  的格式绑定数据 数据双向绑定 v-model12v-model 指令在表单控件元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。vuejs双向绑定并不能适用于所有的html表单，限制为input、select、textarea、components。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-03T12:05:18.819Z">
+<meta property="og:image" content="http://cimg1.fenqile.com/ibanner2/M00/00/5F/jqgHAFpLTaaARMQfAA3qCqQcx5s639.jpg">
+<meta property="og:updated_time" content="2018-02-08T09:49:16.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue属性与方法">
-<meta name="twitter:description" content="数据绑定 数据绑定使用  的格式绑定数据 数据双向绑定 v-model12v-model 指令在表单控件元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。vuejs双向绑定并不能适用于所有的html表单，限制为input、select、textarea、components。">
+<meta name="twitter:title" content="Vue学习相关笔记">
+<meta name="twitter:description" content="基础操作数据绑定 数据绑定使用  的格式绑定数据 数据双向绑定 v-model12v-model 指令在表单控件元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。vuejs双向绑定并不能适用于所有的html表单，限制为input、select、textarea、components。">
+<meta name="twitter:image" content="http://cimg1.fenqile.com/ibanner2/M00/00/5F/jqgHAFpLTaaARMQfAA3qCqQcx5s639.jpg">
 
 
 
@@ -126,7 +128,7 @@
 
 
 
-  <title>Vue属性与方法 | Dull's Blog</title>
+  <title>Vue学习相关笔记 | Dull's Blog</title>
   
 
 
@@ -304,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue属性与方法</h1>
+          <h1 class="post-title" itemprop="name headline">Vue学习相关笔记</h1>
         
 
         <div class="post-meta">
@@ -370,7 +372,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,083 字
+                  1,956 字
                 </span>
               
 
@@ -386,7 +388,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  8
                 </span>
               
             </div>
@@ -407,7 +409,7 @@
       
 
       
-        <h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><ul>
+        <h1 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h1><h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><ul>
 <li>数据绑定<br>使用  的格式绑定数据</li>
 <li>数据双向绑定 v-model<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">v-model 指令在表单控件元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。</div><div class="line">vuejs双向绑定并不能适用于所有的html表单，限制为input、select、textarea、components。</div></pre></td></tr></table></figure>
 </li>
@@ -427,25 +429,51 @@
 </li>
 </ul>
 <hr>
-<h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h3><p><code>computed意为计算属性，注意，是属性！！！然后methods意为方法。</code><br>var obj = {<br>    name:’hello’,<br>    shake:function(){}<br>}<br>name是obj的成员属性，而shake是obj的成员方法。</p>
-<h2 id="我们可以将同一函数定义为一个-method-而不是一个计算属性。对于最终的结果，两种方式确实是相同的。然而，不同的是计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。这就意味着只要-message-还没有发生改变，多次访问-reversedMessage-计算属性会立即返回之前的计算结果，而不必再次执行函数。"><a href="#我们可以将同一函数定义为一个-method-而不是一个计算属性。对于最终的结果，两种方式确实是相同的。然而，不同的是计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。这就意味着只要-message-还没有发生改变，多次访问-reversedMessage-计算属性会立即返回之前的计算结果，而不必再次执行函数。" class="headerlink" title="我们可以将同一函数定义为一个 method 而不是一个计算属性。对于最终的结果，两种方式确实是相同的。然而，不同的是计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。"></a>我们可以将同一函数定义为一个 method 而不是一个计算属性。对于最终的结果，两种方式确实是相同的。然而，不同的是<code>计算属性</code>是基于它们的依赖进行缓存的。计算属性只有在它的<code>相关依赖发生改变时</code>才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。</h2><h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ul>
+<h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><p><code>computed意为计算属性，注意，是属性！！！然后methods意为方法。</code><br>var obj = {<br>    name:’hello’,<br>    shake:function(){}<br>}<br>name是obj的成员属性，而shake是obj的成员方法。</p>
+<h2 id="我们可以将同一函数定义为一个-method-而不是一个计算属性。对于最终的结果，两种方式确实是相同的。然而，不同的是计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。这就意味着只要-message-还没有发生改变，多次访问-reversedMessage-计算属性会立即返回之前的计算结果，而不必再次执行函数。"><a href="#我们可以将同一函数定义为一个-method-而不是一个计算属性。对于最终的结果，两种方式确实是相同的。然而，不同的是计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。这就意味着只要-message-还没有发生改变，多次访问-reversedMessage-计算属性会立即返回之前的计算结果，而不必再次执行函数。" class="headerlink" title="我们可以将同一函数定义为一个 method 而不是一个计算属性。对于最终的结果，两种方式确实是相同的。然而，不同的是计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。"></a>我们可以将同一函数定义为一个 method 而不是一个计算属性。对于最终的结果，两种方式确实是相同的。然而，不同的是<code>计算属性</code>是基于它们的依赖进行缓存的。计算属性只有在它的<code>相关依赖发生改变时</code>才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。</h2><h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ul>
 <li>参数<br>一些指令能够接受一个“参数”，在指令后以冒号指明。例如，<code>v-bind</code>指令被用来响应的更新HTML属性。<br>下面是a标签中href参数，告知v-bind指令将钙元素的href属性与表达式url的值绑定。<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-bind:href</span>=<span class="string">"url"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>另一个例子v-on，用于监听DOM事件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click</span>=<span class="string">"doSome"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line">+ 修饰符</div><div class="line">修饰符(Modifiers)是以半角句号 `.` 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如,`.prevent` 修饰符告诉 `v-on` 指令对于出发的事件调用'event.preventDeafult()'：</div><div class="line">```html</div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>=<span class="string">"onSubmit"</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p>可用于一些常见文本的格式化。可用于<code>插值</code>和<code>v-bind</code>(Vue2.1.0开始支持)表达式。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 插值 --&gt;</span></div><div class="line">&#123;&#123; msg | capitalize&#125;&#125;</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- b-bind --&gt;</span></div><div class="line">&#123;&#123;div v-bind:id="sth | formatId"&#125;&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>可用于一些常见文本的格式化。可用于<code>插值</code>和<code>v-bind</code>(Vue2.1.0开始支持)表达式。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 插值 --&gt;</span></div><div class="line">&#123;&#123; msg | capitalize&#125;&#125;</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- b-bind --&gt;</span></div><div class="line">&#123;&#123;div v-bind:id="sth | formatId"&#125;&#125;</div></pre></td></tr></table></figure></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  filters: &#123;</div><div class="line">    <span class="attr">capitalize</span>: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></div><div class="line">      value = value.toString()</div><div class="line">      <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>过滤器可以串联：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;   msg  |  filterA  |  filterB  &#125;&#125;</div></pre></td></tr></table></figure></p>
 <p>过滤器是 JavaScript 函数，因此可以接受参数：<br>这里，字符串 ‘arg1’ 将传给过滤器作为第二个参数， arg2 表达式的值将被求值然后传给过滤器作为第三个参数。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;   msg  |  filterA( 'arg1' , arg2 )  &#125;&#125;</div></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h3><ul>
+<h2 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h2><ul>
 <li><p>v-bind<br>当我们需要用到v-bind，使，可以使用<code>:</code>替代</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 完整写法 --&gt;</span></div><div class="line">&#123;&#123;div v-bind:id="sth | formatId"&#125;&#125;</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 缩写--&gt;</span></div><div class="line">&#123;&#123;div :id="sth | formatId"&#125;&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>v-on</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 完整写法 --&gt;</span></div><div class="line">&#123;&#123;div  v-on:click="doSth"   &#125;&#125;</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 缩写--&gt;</span></div><div class="line">&#123;&#123;div  @:click="doSth"    &#125;&#125;</div></pre></td></tr></table></figure></li>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 完整写法 --&gt;</span></div><div class="line">&#123;&#123;div  v-on:click="doSth"   &#125;&#125;</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 缩写--&gt;</span></div><div class="line">&#123;&#123;div  @:click="doSth"    &#125;&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
+<hr>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><p>Vue实例有一个完整的生命周期，也就是从开始创建、初始化数据、编译模板、挂载Dom、渲染→更新→渲染、卸载等一系列过程，我们称这是Vue的生命周期。通俗说就是Vue实例从创建到销毁的过程，就是生命周期。<br><!-- more --></p>
+<p>每个 Vue 实例在被创建之前都要经过一系列的初始化过程。例如，实例需要配置数据观测(data observer)、编译模版、挂载实例到 DOM ，然后在数据变化时更新 DOM 。在这个过程中，实例也会调用一些 生命周期钩子 ，这就给我们提供了执行自定义逻辑的机会。例如，created 这个钩子在实例被创建之后被调用：<br>类似的还有mounted、updated、destroyed<br><code>特别值得注意的是created钩子函数和mounted钩子函数的区别</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// `this` 指向 vm 实例</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'a is: '</span> + <span class="keyword">this</span>.a)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p><img src="http://cimg1.fenqile.com/ibanner2/M00/00/5F/jqgHAFpLTaaARMQfAA3qCqQcx5s639.jpg" alt="Image text"></p>
+<h1 id="Vue中如何实现动画-过渡动画"><a href="#Vue中如何实现动画-过渡动画" class="headerlink" title="Vue中如何实现动画/过渡动画"></a>Vue中如何实现动画/过渡动画</h1><h2 id="过渡效果"><a href="#过渡效果" class="headerlink" title="过渡效果"></a>过渡效果</h2><p>Vue中使用过度效果时，需要在父级包裹一层<code>&lt;transition&gt;&lt;/transition&gt;</code>，并且在name中指明过渡效果的类名，<code>需在CSS中编写 类名-enter,类名-leave</code><br><!-- more --></p>
+<p>例如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"fade"</span>&gt;</span>        //name指明了过渡效果的类名，</div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>我是一个有过渡效果的块<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">/* 可以设置不同的进入和离开动画 */</div><div class="line">/* 设置持续时间和动画函数 */</div><div class="line">.slide-fade-enter-active &#123;</div><div class="line">  transition: all .3s ease;</div><div class="line">&#125;</div><div class="line">.slide-fade-leave-active &#123;</div><div class="line">  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);</div><div class="line">&#125;</div><div class="line">.slide-fade-enter, .slide-fade-leave-to</div><div class="line">/* .slide-fade-leave-active for &lt;2.1.8 */ &#123;</div><div class="line">  transform: translateX(10px);</div><div class="line">  opacity: 0;</div><div class="line">&#125;</div><div class="line">来源： https://cn.vuejs.org/v2/guide/transitions.html</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>动画的实现方式与过渡相同。<br>例如name=”bounce”<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.bounce-enter-active</span> &#123;</div><div class="line">  <span class="attribute">animation</span>: bounce-in .<span class="number">5s</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.bounce-leave-active</span> &#123;</div><div class="line">  <span class="attribute">animation</span>: bounce-in .<span class="number">5s</span> reverse;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> bounce-in &#123;</div><div class="line">  0% &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(0);</div><div class="line">  &#125;</div><div class="line">  50% &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.5);</div><div class="line">  &#125;</div><div class="line">  100% &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(1);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="设置过渡持续时间"><a href="#设置过渡持续时间" class="headerlink" title="设置过渡持续时间"></a>设置过渡持续时间</h2><p>在过渡上绑定duration属性可以控制<code>样式存在时间的长短</code>，经过个人测试并不能改变属性变化时间长短，只能在CSS中进行更改。<br>假如Css中未设置transition-duration，会当作0来处理。</p>
+<h4 id="钩子函数"><a href="#钩子函数" class="headerlink" title="钩子函数"></a>钩子函数</h4><p>Vue对次提供了一些钩子函数，用于各个状态的调用，具体如下：</p>
+<ul>
+<li>这些钩子函数可以结合CSS transition/animations 使用，也可以单独使用。</li>
+<li>当只用 JavaScript 过渡的时候， 在 enter 和 leave 中，回调函数 done 是必须的 。 否则，它们会被同步调用，过渡会立即完成。</li>
+<li>推荐对于仅使用 JavaScript 过渡的元素添加 v-bind:css=”false”，Vue 会跳过 CSS 的检测。这也可以避免过渡过程中 CSS 的影响。<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">transition</span></span></div><div class="line">  <span class="attr">v-on:before-enter</span>=<span class="string">"beforeEnter"</span></div><div class="line">  <span class="attr">v-on:enter</span>=<span class="string">"enter"</span></div><div class="line">  <span class="attr">v-on:after-enter</span>=<span class="string">"afterEnter"</span></div><div class="line">  <span class="attr">v-on:enter-cancelled</span>=<span class="string">"enterCancelled"</span></div><div class="line">  <span class="attr">v-on:before-leave</span>=<span class="string">"beforeLeave"</span></div><div class="line">  <span class="attr">v-on:leave</span>=<span class="string">"leave"</span></div><div class="line">  <span class="attr">v-on:after-leave</span>=<span class="string">"afterLeave"</span></div><div class="line">  <span class="attr">v-on:leave-cancelled</span>=<span class="string">"leaveCancelled"</span></div><div class="line">&gt;</div><div class="line">  <span class="comment">&lt;!-- ... --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div><div class="line">来源： https://cn.vuejs.org/v2/guide/transitions.html#自定义过渡类名</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="过度模式"><a href="#过度模式" class="headerlink" title="过度模式"></a>过度模式</h2><p>当多个元素都具有过度效果时，并且想具有一前一后的过渡效果时，可以使用过度模式实现。<br>有以下两种种过渡模式：</p>
+<ul>
+<li>in-out ：新元素先进行过渡，完成之后当前元素过度离开；</li>
+<li>out-in ：当前元素先进行过渡，完成之后新元素过渡进入。<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"fade"</span> <span class="attr">mode</span>=<span class="string">"in-out"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是过渡元素<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="更过过渡的效果"><a href="#更过过渡的效果" class="headerlink" title="更过过渡的效果"></a>更过过渡的效果</h2><p><a href="https://cn.vuejs.org/v2/guide/transitions.html#可复用的过渡" target="_blank" rel="noopener">更多过渡</a></p>
+<p><a href="https://cn.vuejs.org/v2/guide/transitioning-state.html" target="_blank" rel="noopener">与其他组件配合</a></p>
 
       
     </div>
@@ -476,8 +504,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/02/test/" rel="next" title="常用整理-H5">
-                <i class="fa fa-chevron-left"></i> 常用整理-H5
+              <a href="/2017/03/12/cssMedia/" rel="next" title="Ipad、Iphone媒体查询">
+                <i class="fa fa-chevron-left"></i> Ipad、Iphone媒体查询
               </a>
             
           </div>
@@ -486,8 +514,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/23/vue-base2/" rel="prev" title="Vue生命周期">
-                Vue生命周期 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/27/ar_web1/" rel="prev" title="Web AR 预研二三事">
+                Web AR 预研二三事 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -565,7 +593,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -576,7 +604,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -587,7 +615,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -620,7 +648,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据绑定"><span class="nav-number">1.</span> <span class="nav-text">数据绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算属性"><span class="nav-number">1.1.</span> <span class="nav-text">计算属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们可以将同一函数定义为一个-method-而不是一个计算属性。对于最终的结果，两种方式确实是相同的。然而，不同的是计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。这就意味着只要-message-还没有发生改变，多次访问-reversedMessage-计算属性会立即返回之前的计算结果，而不必再次执行函数。"><span class="nav-number">2.</span> <span class="nav-text">我们可以将同一函数定义为一个 method 而不是一个计算属性。对于最终的结果，两种方式确实是相同的。然而，不同的是计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#指令"><span class="nav-number">2.1.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤器"><span class="nav-number">2.2.</span> <span class="nav-text">过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缩写"><span class="nav-number">2.3.</span> <span class="nav-text">缩写</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础操作"><span class="nav-number">1.</span> <span class="nav-text">基础操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据绑定"><span class="nav-number">1.1.</span> <span class="nav-text">数据绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算属性"><span class="nav-number">1.2.</span> <span class="nav-text">计算属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们可以将同一函数定义为一个-method-而不是一个计算属性。对于最终的结果，两种方式确实是相同的。然而，不同的是计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。这就意味着只要-message-还没有发生改变，多次访问-reversedMessage-计算属性会立即返回之前的计算结果，而不必再次执行函数。"><span class="nav-number">1.3.</span> <span class="nav-text">我们可以将同一函数定义为一个 method 而不是一个计算属性。对于最终的结果，两种方式确实是相同的。然而，不同的是计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令"><span class="nav-number">1.4.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器"><span class="nav-number">1.5.</span> <span class="nav-text">过滤器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缩写"><span class="nav-number">1.6.</span> <span class="nav-text">缩写</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期"><span class="nav-number">2.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue中如何实现动画-过渡动画"><span class="nav-number">3.</span> <span class="nav-text">Vue中如何实现动画/过渡动画</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#过渡效果"><span class="nav-number">3.1.</span> <span class="nav-text">过渡效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动画"><span class="nav-number">3.2.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置过渡持续时间"><span class="nav-number">3.3.</span> <span class="nav-text">设置过渡持续时间</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#钩子函数"><span class="nav-number">3.3.0.1.</span> <span class="nav-text">钩子函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过度模式"><span class="nav-number">3.4.</span> <span class="nav-text">过度模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更过过渡的效果"><span class="nav-number">3.5.</span> <span class="nav-text">更过过渡的效果</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -654,7 +682,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">24.8k</span>
+    <span title="Site words total count">23.5k</span>
   
 </div>
 

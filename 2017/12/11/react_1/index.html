@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;React学习笔记，React创建及其基础。">
+<meta name="description" content="&amp;emsp;&amp;emsp;React学习笔记。">
 <meta name="keywords" content="react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React基础">
 <meta property="og:url" content="https://dullly.github.io/2017/12/11/react_1/index.html">
 <meta property="og:site_name" content="Dull&#39;s Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;React学习笔记，React创建及其基础。">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;React学习笔记。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-14T11:52:44.009Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20160703034722480">
+<meta property="og:updated_time" content="2018-02-08T09:56:01.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React基础">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;React学习笔记，React创建及其基础。">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;React学习笔记。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160703034722480">
 
 
 
@@ -370,7 +372,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  566 字
+                  1,381 字
                 </span>
               
 
@@ -386,7 +388,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  5
                 </span>
               
             </div>
@@ -407,8 +409,9 @@
       
 
       
-        <div class="note info"><p>&emsp;&emsp;React学习笔记，React创建及其基础。</p></div>
+        <div class="note info"><p>&emsp;&emsp;React学习笔记。</p></div>
 <a id="more"></a>
+<p>#React基础</p>
 <h2 id="创建React-Dom的几种方式"><a href="#创建React-Dom的几种方式" class="headerlink" title="创建React Dom的几种方式"></a>创建React Dom的几种方式</h2><p>通过Reat的<code>createElement</code>方法进行创建，通过render函数进行渲染<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> h1 = React.createElement(</div><div class="line">  <span class="string">"h1"</span>,</div><div class="line">  &#123;</div><div class="line">    <span class="attr">className</span>:<span class="string">"test1"</span>,</div><div class="line">  &#125;,</div><div class="line">“我是内容”</div><div class="line"></div><div class="line"><span class="comment">//渲染</span></div><div class="line">ReactDOM.render(h1,<span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</div></pre></td></tr></table></figure></p>
 <p>编写一个JavaScript函数，它接受一个带有数据的“props”（代表属性）对象参数并返回一个React元素。我们将这些组件称为“功能”，因为它们实际上是JavaScript的功能<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Tseta</span>(<span class="params">props</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>hahah&#123;props.name&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> ele = <span class="xml"><span class="tag">&lt;<span class="name">Tseta</span> <span class="attr">name</span>=<span class="string">"shabi"</span> /&gt;</span></span></div><div class="line">ReactDOM.render(ele,document.getElementById('root'));</div></pre></td></tr></table></figure></p>
 <p>ES6的定义方式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Welcome</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -421,6 +424,27 @@
 <li><strong>组件无法访问生命周期的方法</strong><br>因为无状态组件是不需要组件生命周期管理和状态管理，所以底层实现这种形式的组件时是不会实现组件的生命周期方法。所以无状态组件是不能参与组件的各个生命周期管理的。</li>
 <li><strong>无状态组件只能访问输入的<code>props</code>，同样的<code>props</code>会得到同样的渲染结果，不会有副作用</strong></li>
 </ol>
+<hr>
+<h1 id="React生命周期及一些钩子"><a href="#React生命周期及一些钩子" class="headerlink" title="React生命周期及一些钩子"></a>React生命周期及一些钩子</h1><h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p><a href="https://reactjs.org/docs/react-component.html#lifecycle-methods" target="_blank" rel="noopener">生命周期</a><br><img src="http://img.blog.csdn.net/20160703034722480" alt=""><br>定义一个TodoList的React组件，通过继承React.Component来实现<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123; </div><div class="line">    <span class="keyword">constructor</span>(props)&#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.state = &#123;&#125;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="getDefaultProps"><a href="#getDefaultProps" class="headerlink" title="getDefaultProps"></a>getDefaultProps</h2><p>执行过一次后，被创建的类会有缓存，映射的值会存在this.props,前提是这个prop不是父组件指定的<br>这个方法在对象被创建之前执行，因此不能在方法内调用this.props ，另外，注意任何getDefaultProps()返回的对象在实例中共享，不是复制</p>
+<h2 id="getInitialState"><a href="#getInitialState" class="headerlink" title="getInitialState"></a>getInitialState</h2><p>控件加载之前执行，返回值会被用于state的初始化值</p>
+<h2 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount"></a>componentWillMount</h2><p>执行一次，在初始化render之前执行，如果在这个方法内调用setState，render()知道state发生变化，并且只执行一次</p>
+<h2 id="render"><a href="#render" class="headerlink" title="render"></a>render</h2><p>render的时候会调用<code>render()</code>会被调用<br>调用<code>render()</code>方法时，首先检查<code>this.props</code>和<code>this.state</code>返回一个子元素，子元素可以是DOM组件或者其他自定义复合控件的虚拟实现<br>如果不想渲染可以返回<code>null</code>或者<code>false</code>，这种场景下，React渲染一个<noscript>标签，当返回null或者false时，ReactDOM.findDOMNode(this)返回null </noscript></p>
+<p>note info:<br><code>render()</code>方法是很纯净的，这就意味着不要在这个方法里初始化组件的<code>state</code>，每次执行时返回相同的值，不会读写DOM或者与服务器交互，如果必须如服务器交互，在componentDidMount()方法中实现或者其他生命周期的方法中实现，保持<code>render()</code>方法纯净使得服务器更准确，组件更简单</p>
+<h2 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount"></a>componentDidMount</h2><p>在初始化<code>render()</code>之后只执行一次，在这个方法内，可以访问任何组件，componentDidMount() 方法中的子组件在父组件之前执行</p>
+<p>**从这个函数开始，就可以和 JS 其他框架交互了，</p>
+<blockquote>
+<p>例如设置计时 setTimeout 或者 setInterval，或者发起网络请求</p>
+</blockquote>
+<hr>
+<h2 id="shouldComponetUpdate"><a href="#shouldComponetUpdate" class="headerlink" title="shouldComponetUpdate"></a>shouldComponetUpdate</h2><p>这个方法在初始化<code>render()</code>时不会执行，当<code>props</code>或者<code>state</code>发生变化时执行，并且是在<code>render()</code>之前，当新的<code>props</code>或者<code>state</code>不需要更新组件时，返回false<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">shouldComponentUpdate: <span class="function"><span class="keyword">function</span>(<span class="params">nextProps, nextState</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> nextProps.id !== <span class="keyword">this</span>.props.id; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当<code>shouldComponentUpdate</code>方法返回false时，讲不会执行<code>render()</code>方法，<code>componentWillUpdate</code>和<code>componentDidUpdate</code>方法也不会被调用。</p>
+<p>note info:<br>默认情况下，<code>shouldComponentUpdate</code>方法返回true防止state快速变化时的问题，但是如果<code>state</code>不变，<code>props</code>只读，可以直接覆盖<code>shouldComponentUpdate</code>用于比较<code>props</code>和<code>state</code>的变化，决定UI是否更新，当组件比较多时，使用这个方法能有效提高应用性能</p>
+<h2 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate"></a>componentDidUpdate</h2><p>组件更新结束之后执行，在初始化<code>render()</code>时不执行</p>
+<h2 id="componentWillRecevieProps"><a href="#componentWillRecevieProps" class="headerlink" title="componentWillRecevieProps"></a>componentWillRecevieProps</h2><p>当props发生变化时执行，初始化render时不执行，在这个回调函数里面，你可以根据属性的变化，通过调用this.setState()来更新你的组件状态，旧的属性还是可以通过this.props来获取,这里调用更新状态是安全的，并不会触发额外的render调用</p>
+<h2 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount"></a>componentWillUnmount</h2><p>当组件要被从界面上移除的时候，就会调用componentWillUnmount(),在这个函数中，可以做一些组件相关的清理工作，例如取消计时器、网络请求等</p>
+<hr>
+<p>note info:<br>建议只有在componentWillMount,componentDidMount,componentWillReceiveProps方法中可以修改state值</p>
 
       
     </div>
@@ -451,8 +475,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/11/react_2/" rel="next" title="React生命周期">
-                <i class="fa fa-chevron-left"></i> React生命周期
+              <a href="/2017/11/15/es6_1/" rel="next" title="ES6--let/const以及块级作用域">
+                <i class="fa fa-chevron-left"></i> ES6--let/const以及块级作用域
               </a>
             
           </div>
@@ -536,7 +560,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -547,7 +571,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -558,7 +582,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -591,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建React-Dom的几种方式"><span class="nav-number">1.</span> <span class="nav-text">创建React Dom的几种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构成组件"><span class="nav-number">2.</span> <span class="nav-text">构成组件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建React-Dom的几种方式"><span class="nav-number">1.</span> <span class="nav-text">创建React Dom的几种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构成组件"><span class="nav-number">2.</span> <span class="nav-text">构成组件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React生命周期及一些钩子"><span class="nav-number"></span> <span class="nav-text">React生命周期及一些钩子</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期"><span class="nav-number">1.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getDefaultProps"><span class="nav-number">2.</span> <span class="nav-text">getDefaultProps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getInitialState"><span class="nav-number">3.</span> <span class="nav-text">getInitialState</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#componentWillMount"><span class="nav-number">4.</span> <span class="nav-text">componentWillMount</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#render"><span class="nav-number">5.</span> <span class="nav-text">render</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#componentDidMount"><span class="nav-number">6.</span> <span class="nav-text">componentDidMount</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shouldComponetUpdate"><span class="nav-number">7.</span> <span class="nav-text">shouldComponetUpdate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#componentDidUpdate"><span class="nav-number">8.</span> <span class="nav-text">componentDidUpdate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#componentWillRecevieProps"><span class="nav-number">9.</span> <span class="nav-text">componentWillRecevieProps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#componentWillUnmount"><span class="nav-number">10.</span> <span class="nav-text">componentWillUnmount</span></a></li></ol></div>
             
 
           </div>
@@ -625,7 +649,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">24.8k</span>
+    <span title="Site words total count">23.5k</span>
   
 </div>
 
